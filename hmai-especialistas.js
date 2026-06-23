@@ -1148,7 +1148,7 @@ Diseñado para que la gente quiera descargarlo.`
       {
         id: 'micaela_historias_ig',
         icon: '📸',
-        nombre: 'Sofía — Historias de Instagram',
+        nombre: 'Historias de Instagram',
         desc: 'Calendario estratégico mensual de historias con stickers para maximizar interacción.',
         campos: [
           { tipo: 'select', nombre: 'frecuencia', label: '¿Cuántas veces publicás historias por semana?', opciones: ['2 veces','3 veces','4 veces','5 veces','6 veces','Todos los días'] },
