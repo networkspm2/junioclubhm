@@ -1,16 +1,5 @@
-// ============================================================
-// HM AI — ESPECIALISTAS COMPLETOS
-// Archivo externo alojado en GitHub
-// URL: raw.githubusercontent.com/networkspm2/junioclubhm/main/hmai-especialistas.js
-// ============================================================
-
+// HM AI — Especialistas
 window.ESPECIALISTAS = {
-// ESPECIALISTAS — PARTE 1: YVETTE + KEILA
-// Reemplaza el objeto ESPECIALISTAS en hmai-app.liquid
-// desde "const ESPECIALISTAS = {" hasta el cierre de keila
-// ============================================================
-
-const ESPECIALISTAS = {
 
   // ============================================================
   // YVETTE — DIRECCIÓN Y ESTRATEGIA
@@ -645,7 +634,6 @@ Como directora comercial contratada para aumentar ventas. Sin rodeos.`
       },
     ]
   },
-
   // ============================================================
   // DANIELA — CONTENIDO Y COPYWRITING
   // ============================================================
@@ -1491,7 +1479,6 @@ Como Brand Designer internacional. Estratégica y lista para implementar.`
       },
     ]
   },
-
   // ============================================================
   daro: {
     nombre: 'Daro',
@@ -2778,4 +2765,4 @@ Como director audiovisual profesional. Listo para producir.`
     ]
   },
 
-}; // fin ESPECIALISTAS
+}; // fin
