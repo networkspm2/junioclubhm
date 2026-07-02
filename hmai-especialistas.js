@@ -2496,273 +2496,469 @@ Proceso profesional, escalable, sin depender del talento de una sola persona.`
   },
 
   // ============================================================
-  // VALERIA — VISUAL IA
-  // ============================================================
-  valeria: {
-    nombre: 'Valeria',
-    rol: 'Diseño Visual IA',
-    avatar: 'https://cdn.shopify.com/s/files/1/0800/6955/8502/files/Valeria.png?v=1781476124',
-    color: 'linear-gradient(135deg,#be185d,#9333ea)',
-    desc: 'Diseñadora IA. Banners, flyers, portadas, ads y branding visual generados con inteligencia artificial.',
-    esVisual: true,
-    herramientas: [
-      {
-        id: 'valeria_banner',
-        icon: '🖼️',
-        nombre: 'Generadora de Banners',
-        desc: 'Banners publicitarios profesionales generados con IA.',
-        campos: [
-          { tipo: 'input', nombre: 'titulo', label: 'Texto principal', placeholder: 'Ej: 50% OFF esta semana' },
-          { tipo: 'input', nombre: 'subtitulo', label: 'Texto secundario (opcional)', placeholder: 'Ej: Solo hasta el domingo' },
-          { tipo: 'input', nombre: 'cta', label: 'Call to Action (opcional)', placeholder: 'Ej: Consultá ahora' },
-          { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del banner', opciones: ['Venta','Promoción','Lanzamiento','Branding','Evento','Captación de leads'] },
-          { tipo: 'select', nombre: 'tamano', label: 'Tamaño', opciones: ['Feed Instagram (1:1)','Historia vertical (9:16)','Facebook cover','Landing/Web','Display'] },
-        ],
-        esImagen: true,
-        prompt_imagen: `Professional advertising banner for {{tamano}} format. 
-Brand style: {{estilo_visual}} from the brand profile.
-Brand colors: {{colores_marca}}.
-Main text: "{{titulo}}"
-Secondary text: "{{subtitulo}}"
-CTA: "{{cta}}"
-Goal: {{objetivo}}
-Design rules: clean hierarchy, high contrast, legible typography, premium finish. The text must be clearly readable. Professional advertising quality ready to publish.`
-      },
-      {
-        id: 'valeria_flyer',
-        icon: '📄',
-        nombre: 'Generadora de Flyers',
-        desc: 'Flyers publicitarios de alto impacto generados con IA.',
-        campos: [
-          { tipo: 'input', nombre: 'titulo', label: 'Título principal', placeholder: 'Ej: Gran liquidación de temporada' },
-          { tipo: 'input', nombre: 'texto_secundario', label: 'Texto secundario (opcional)', placeholder: 'Ej: Descuentos de hasta 60% en toda la tienda' },
-          { tipo: 'input', nombre: 'cta', label: 'CTA (opcional)', placeholder: 'Ej: Escribinos al 11-1234-5678' },
-          { tipo: 'select', nombre: 'objetivo', label: 'Objetivo', opciones: ['Venta','Evento','Lanzamiento','Captación','Branding'] },
-          { tipo: 'select', nombre: 'formato', label: 'Formato', opciones: ['Instagram Feed cuadrado','Historia vertical','Impresión A4','WhatsApp'] },
-        ],
-        esImagen: true,
-        prompt_imagen: `Professional advertising flyer for {{formato}} format.
-Brand colors: {{colores_marca}}.
-Visual style: {{estilo_visual}}.
-Title: "{{titulo}}"
-Secondary text: "{{texto_secundario}}"
-CTA: "{{cta}}"
-Design rules: capture attention in 3 seconds, clear visual hierarchy, bold CTA, no visual saturation. Professional advertising quality.`
-      },
-      {
-        id: 'valeria_portada',
-        icon: '🎨',
-        nombre: 'Generadora de Portadas Visuales',
-        desc: 'Portadas impactantes para reels, cursos o ebooks con IA.',
-        campos: [
-          { tipo: 'input', nombre: 'titulo', label: 'Título principal', placeholder: 'Ej: Cómo conseguir 1000 clientes en 90 días' },
-          { tipo: 'input', nombre: 'subtitulo', label: 'Subtítulo (opcional)', placeholder: 'Ej: La guía definitiva para agencias' },
-          { tipo: 'select', nombre: 'tipo', label: 'Tipo de portada', opciones: ['Reel / TikTok','Ebook / Guía','Curso online','YouTube thumbnail','Presentación'] },
-          { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista','Moderno','Premium','Impactante','Editorial'] },
-        ],
-        esImagen: true,
-        prompt_imagen: `Professional {{tipo}} cover design.
-Brand colors: {{colores_marca}}.
-Style: {{estilo}} visual design.
-Title: "{{titulo}}"
-Subtitle: "{{subtitulo}}"
-Design rules: maximum visual impact, clean composition, absolute focus on title readability, professional modern aesthetic. High CTR optimized design.`
-      },
-      {
-        id: 'valeria_ads',
-        icon: '📢',
-        nombre: 'Generadora de Creatividades para Ads',
-        desc: 'Creatividades para Meta Ads y campañas de performance con IA.',
-        campos: [
-          { tipo: 'input', nombre: 'producto', label: 'Producto o servicio', placeholder: 'Ej: Curso de marketing digital' },
-          { tipo: 'input', nombre: 'oferta', label: 'Oferta principal', placeholder: 'Ej: Primer mes gratis / 50% OFF' },
-          { tipo: 'input', nombre: 'beneficio', label: 'Beneficio principal', placeholder: 'Ej: Conseguí tus primeros 10 clientes en 30 días' },
-          { tipo: 'input', nombre: 'cta', label: 'Call to Action', placeholder: 'Ej: Empezá hoy / Consultá gratis' },
-          { tipo: 'select', nombre: 'formato', label: 'Formato del ad', opciones: ['Feed cuadrado (1:1)','Historia vertical (9:16)','Banner horizontal (16:9)','Feed vertical (4:5)'] },
-        ],
-        esImagen: true,
-        prompt_imagen: `High-converting Meta Ads creative for {{formato}} format.
-Brand colors: {{colores_marca}}.
-Style: {{estilo_visual}}.
-Product: {{producto}}
-Offer: "{{oferta}}"
-Main benefit: "{{beneficio}}"
-CTA: "{{cta}}"
-Design rules: bold typography for benefit, strong visual contrast, offer must stand out, performance-optimized layout, scroll-stopping design.`
-      },
-      {
-        id: 'valeria_branding',
-        icon: '✨',
-        nombre: 'Generadora de Branding Visual',
-        desc: 'Propuesta visual de branding completa generada con IA.',
-        campos: [
-          { tipo: 'select', nombre: 'industria', label: 'Industria', opciones: ['Marketing / Agencia','Moda y ropa','Gastronomía','Salud y bienestar','Tecnología','Educación','Belleza','Otro'] },
-          { tipo: 'select', nombre: 'personalidad', label: 'Personalidad de la marca', opciones: ['Sofisticada','Cercana','Seria','Atrevida','Minimalista','Natural','Innovadora','Lujosa'] },
-          { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista elegante','Moderno y dinámico','Editorial premium','Orgánico y natural','Futurista','Vintage','Colorido y alegre'] },
-          { tipo: 'input', nombre: 'referencias', label: 'Referencias visuales', placeholder: 'Ej: Zara, Glossier, Apple, Nike...' },
-        ],
-        esImagen: true,
-        prompt_imagen: `Professional brand visual identity proposal.
+// VALERIA — DISEÑO VISUAL IA (ACTUALIZADO)
+// ============================================================
+valeria: {
+  nombre: 'Valeria',
+  rol: 'Diseño Visual IA',
+  avatar: 'https://cdn.shopify.com/s/files/1/0800/6955/8502/files/Valeria.png?v=1781476124',
+  color: 'linear-gradient(135deg,#be185d,#9333ea)',
+  desc: 'Diseñadora IA. Fondos y bases visuales profesionales para banners, flyers, ads y branding. Vos agregás el texto encima.',
+  esVisual: true,
+  tutorial: {
+    titulo: '¿Cómo usar a Valeria?',
+    pasos: [
+      { icon: '🖼️', titulo: 'Subí tu imagen de referencia', desc: 'Una foto de tu producto, un logo, o una imagen que quieras usar como base visual.' },
+      { icon: '🎨', titulo: 'Completá los campos', desc: 'Completá el estilo, objetivo y cualquier indicación extra. Valeria genera el fondo y la composición visual.' },
+      { icon: '✍️', titulo: 'Agregás el texto vos', desc: 'Valeria NO genera texto en la imagen. La base visual que obtenés está lista para que le agregues tu copy en Canva, Photoshop o cualquier app de diseño.' },
+    ]
+  },
+  herramientas: [
+    {
+      id: 'valeria_banner',
+      icon: '🖼️',
+      nombre: 'Generadora de Fondos para Banner',
+      desc: 'Fondo visual profesional para tu banner. Agregás el texto encima en Canva.',
+      campos: [
+        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del banner', opciones: ['Venta / Promoción', 'Lanzamiento de producto', 'Branding / Posicionamiento', 'Evento', 'Captación de leads'] },
+        { tipo: 'select', nombre: 'tamano', label: 'Formato', opciones: ['Feed Instagram cuadrado (1:1)', 'Historia vertical (9:16)', 'Banner horizontal (16:9)', 'Feed vertical (4:5)'] },
+        { tipo: 'select', nombre: 'estilo_fondo', label: 'Estilo visual del fondo', opciones: ['Minimalista y limpio', 'Colorido y vibrante', 'Elegante y oscuro', 'Natural con texturas', 'Geométrico moderno', 'Degradado suave'] },
+        { tipo: 'input', nombre: 'elemento_visual', label: 'Elemento visual central (opcional)', placeholder: 'Ej: flores secas, café humeante, textura de mármol...' },
+        { tipo: 'input', nombre: 'indicaciones_extra', label: 'Indicaciones adicionales (opcional)', placeholder: 'Ej: que se vea premium, espacio en blanco arriba para título...' },
+      ],
+      esImagen: true,
+      prompt_imagen: `Create a BACKGROUND-ONLY professional advertising visual for {{tamano}} format. This is a BACKGROUND BASE — absolutely NO text, NO typography, NO words, NO letters of any kind anywhere in the image.
+
+Visual objective: {{objetivo}}
+Brand colors: {{colores_marca}}
+Visual style: {{estilo_fondo}}
+Central visual element: {{elemento_visual}}
+Extra indications: {{indicaciones_extra}}
+Brand overall aesthetic: {{estilo_visual}}
+
+STRICT RULES:
+- ZERO text, letters, words or typography in the image — this is NON-NEGOTIABLE
+- Leave intentional negative space / breathing room for text overlay (especially top third or bottom third)
+- Professional advertising quality, print-ready
+- Rich colors and contrast but not overwhelming — the design must support text being readable on top
+- Photorealistic or high-end graphic background depending on style
+- Dimensions and crop must feel intentional for the selected format
+- The visual must feel premium and publishable on its own, even without text`
+    },
+    {
+      id: 'valeria_flyer',
+      icon: '📄',
+      nombre: 'Generadora de Fondos para Flyer',
+      desc: 'Base visual de alto impacto para tu flyer. Vos completás el texto en Canva.',
+      campos: [
+        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del flyer', opciones: ['Promoción / Descuento', 'Evento', 'Lanzamiento', 'Captación de clientes', 'Branding'] },
+        { tipo: 'select', nombre: 'formato', label: 'Formato', opciones: ['Instagram Feed cuadrado', 'Historia vertical (9:16)', 'Impresión A4 vertical', 'WhatsApp / General'] },
+        { tipo: 'select', nombre: 'estilo_fondo', label: 'Estilo visual', opciones: ['Impactante y llamativo', 'Minimalista y elegante', 'Oscuro y premium', 'Colorido y festivo', 'Natural y orgánico'] },
+        { tipo: 'select', nombre: 'paleta', label: 'Paleta de color', opciones: ['Usar colores de mi marca', 'Neutros (blanco, negro, gris)', 'Cálidos (naranja, rojo, amarillo)', 'Fríos (azul, verde, violeta)', 'Dorado / premium'] },
+        { tipo: 'input', nombre: 'elemento_visual', label: 'Elemento visual central (opcional)', placeholder: 'Ej: producto, figura geométrica, textura, ambiente...' },
+        { tipo: 'input', nombre: 'espacio_texto', label: '¿Dónde querés espacio para el texto?', placeholder: 'Ej: arriba, abajo, en el centro, en la mitad izquierda...' },
+      ],
+      esImagen: true,
+      prompt_imagen: `Create a BACKGROUND-ONLY professional flyer base for {{formato}} format. NO text, NO words, NO letters anywhere — pure visual composition only.
+
+Objective: {{objetivo}}
+Visual style: {{estilo_fondo}}
+Color palette: {{paleta}} — brand colors reference: {{colores_marca}}
+Central visual element: {{elemento_visual}}
+Text placement zone: leave clear intentional empty space at {{espacio_texto}} for text overlay
+Brand aesthetic: {{estilo_visual}}
+
+CRITICAL RULES:
+- ABSOLUTELY NO text, typography, letters or words of any kind
+- The empty space for text must be clean and high-contrast-friendly (light area for dark text or dark area for light text)
+- Advertising-grade quality — must look like it came from a professional design agency
+- Colors must feel intentional and brand-aligned
+- The composition must be visually balanced even without text`
+    },
+    {
+      id: 'valeria_portada',
+      icon: '🎨',
+      nombre: 'Generadora de Fondos para Portadas',
+      desc: 'Portada visual para reels, ebooks o cursos. Sin texto generado — agregás el título vos.',
+      campos: [
+        { tipo: 'select', nombre: 'tipo', label: 'Tipo de portada', opciones: ['Reel / TikTok', 'Ebook / Guía', 'Curso online', 'YouTube thumbnail', 'Presentación / Slide'] },
+        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista y limpio', 'Moderno y dinámico', 'Premium y oscuro', 'Brillante e impactante', 'Editorial suave'] },
+        { tipo: 'select', nombre: 'composicion', label: 'Composición', opciones: ['Fondo abstracto / degradado', 'Con elemento visual central', 'Textura o patrón', 'Fotográfico difuminado', 'Geométrico moderno'] },
+        { tipo: 'input', nombre: 'elemento_visual', label: 'Elemento o concepto visual', placeholder: 'Ej: laptop, gráficos, persona difuminada, partículas...' },
+        { tipo: 'input', nombre: 'indicaciones_extra', label: 'Indicaciones adicionales', placeholder: 'Ej: espacio en el centro para el título, tonos oscuros con detalles dorados...' },
+      ],
+      esImagen: true,
+      prompt_imagen: `Create a BACKGROUND-ONLY professional {{tipo}} cover visual. NO text, NO title, NO words — pure visual background only.
+
+Visual style: {{estilo}}
+Composition type: {{composicion}}
+Visual element/concept: {{elemento_visual}}
+Brand colors: {{colores_marca}}
+Brand aesthetic: {{estilo_visual}}
+Extra: {{indicaciones_extra}}
+
+RULES:
+- Zero text or typography — the user will add the title themselves
+- Leave prominent space (center or upper area) that is visually clean for text overlay
+- High visual impact — must compete for attention in a social media feed
+- Professional quality matching premium educational brands
+- The background must make a bold title readable when overlaid`
+    },
+    {
+      id: 'valeria_ads',
+      icon: '📢',
+      nombre: 'Generadora de Fondos para Ads',
+      desc: 'Base visual de performance para Meta Ads o Google Display. Sin texto — vos lo agregás.',
+      campos: [
+        { tipo: 'input', nombre: 'producto', label: 'Producto o servicio', placeholder: 'Ej: curso de marketing digital, crema hidratante...' },
+        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del anuncio', opciones: ['Ventas directas', 'Captación de leads', 'Branding / Awareness', 'Retargeting', 'Lanzamiento'] },
+        { tipo: 'select', nombre: 'formato', label: 'Formato del ad', opciones: ['Feed cuadrado (1:1)', 'Historia vertical (9:16)', 'Banner horizontal (16:9)', 'Feed vertical (4:5)'] },
+        { tipo: 'select', nombre: 'sensacion', label: 'Sensación que debe transmitir', opciones: ['Urgencia y deseo', 'Confianza y seriedad', 'Exclusividad y lujo', 'Alegría y energía', 'Calma y bienestar'] },
+        { tipo: 'input', nombre: 'elemento_visual', label: 'Elemento visual principal', placeholder: 'Ej: el producto en primer plano, persona feliz, ambiente de oficina...' },
+      ],
+      esImagen: true,
+      prompt_imagen: `Create a BACKGROUND-ONLY high-converting ad visual for {{formato}} format. NO text, NO copy, NO words — background composition only.
+
+Product/service context: {{producto}}
+Ad goal: {{objetivo}}
+Emotional feeling: {{sensacion}}
+Main visual element: {{elemento_visual}}
+Brand colors: {{colores_marca}}
+Brand aesthetic: {{estilo_visual}}
+
+PERFORMANCE RULES:
+- ZERO text of any kind — copywriter will add text separately
+- Scroll-stopping visual impact in the first 0.3 seconds
+- Clear focal point that draws the eye naturally
+- Ample clean space for text overlay (CTA area at bottom or top)
+- Colors calibrated for high contrast and readability of overlaid white or dark text
+- Professional advertising quality matching top-tier Meta Ads creatives`
+    },
+    {
+      id: 'valeria_branding',
+      icon: '✨',
+      nombre: 'Generadora de Concepto Visual de Marca',
+      desc: 'Propuesta de identidad visual: paleta, estilo y mood de marca generado con IA.',
+      campos: [
+        { tipo: 'select', nombre: 'industria', label: 'Industria', opciones: ['Marketing / Agencia', 'Moda y ropa', 'Gastronomía', 'Salud y bienestar', 'Tecnología', 'Educación', 'Belleza y cosmética', 'Otro'] },
+        { tipo: 'select', nombre: 'personalidad', label: 'Personalidad de la marca', opciones: ['Sofisticada y premium', 'Cercana y amigable', 'Seria y corporativa', 'Atrevida y disruptiva', 'Minimalista y limpia', 'Natural y orgánica', 'Innovadora y tech', 'Lujosa y exclusiva'] },
+        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista elegante', 'Moderno y dinámico', 'Editorial premium', 'Orgánico y natural', 'Futurista y tech', 'Vintage y artesanal', 'Colorido y alegre'] },
+        { tipo: 'input', nombre: 'referencias', label: 'Marcas de referencia visual', placeholder: 'Ej: Zara, Glossier, Apple, Nike, Loewe...' },
+        { tipo: 'input', nombre: 'descripcion_negocio', label: '¿Qué hace esta marca?', placeholder: 'Ej: agencia de marketing para pequeños negocios...' },
+      ],
+      esImagen: true,
+      prompt_imagen: `Create a professional brand visual identity mood board. NO text overlays, NO brand name, NO taglines — pure visual concept only.
+
 Industry: {{industria}}
 Brand personality: {{personalidad}}
 Visual style: {{estilo}}
-Color references from brand: {{colores_marca}}
 References: {{referencias}}
-Design rules: coherent visual system, distinctive and memorable identity, premium finish, scalable design. Show logo concept, color palette, typography pairing and a sample social media post mockup.`
-      },
-      {
-        id: 'valeria_moodboard',
-        icon: '🌈',
-        nombre: 'Generadora de Moodboards',
-        desc: 'Moodboards profesionales para definir la dirección visual de un proyecto.',
-        campos: [
-          { tipo: 'input', nombre: 'proyecto', label: 'Proyecto o campaña', placeholder: 'Ej: Lanzamiento colección verano 2025' },
-          { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del moodboard', opciones: ['Definir identidad visual','Campaña publicitaria','Shooting de producto','Rediseño de marca','Nuevo proyecto'] },
-          { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista','Editorial','Luxury','Orgánico','Futurista','Colorido','Vintage','Urbano'] },
-          { tipo: 'select', nombre: 'emocion', label: 'Emoción principal', opciones: ['Exclusividad','Frescura','Energía','Calma','Misterio','Alegría','Nostalgia','Lujo'] },
-        ],
-        esImagen: true,
-        prompt_imagen: `Professional creative moodboard for {{proyecto}}.
-Objective: {{objetivo}}
+Business: {{descripcion_negocio}}
+Current brand colors (reference): {{colores_marca}}
+
+DESIGN RULES:
+- Zero text or typography in the image
+- Show: color palette swatches, texture samples, photographic style, graphic elements, visual mood
+- Professional brand studio quality — should look like a mood board from a top design agency
+- Cohesive visual universe that tells the brand story without words
+- Include visual elements that could become brand assets: patterns, shapes, photography style references`
+    },
+    {
+      id: 'valeria_moodboard',
+      icon: '🌈',
+      nombre: 'Generadora de Moodboards',
+      desc: 'Dirección visual para campañas o proyectos. Collage de referencias estéticas sin texto.',
+      campos: [
+        { tipo: 'input', nombre: 'proyecto', label: 'Proyecto o campaña', placeholder: 'Ej: colección verano 2025, relanzamiento de marca...' },
+        { tipo: 'select', nombre: 'objetivo', label: 'Para qué es', opciones: ['Identidad visual de marca', 'Campaña publicitaria', 'Contenido para redes', 'Shooting fotográfico', 'Rediseño de marca'] },
+        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista', 'Editorial', 'Luxury', 'Orgánico', 'Futurista', 'Colorido', 'Vintage', 'Urbano'] },
+        { tipo: 'select', nombre: 'emocion', label: 'Emoción principal', opciones: ['Exclusividad', 'Frescura', 'Energía', 'Calma', 'Lujo', 'Alegría', 'Nostalgia', 'Misterio'] },
+        { tipo: 'input', nombre: 'referencias', label: 'Referencias o elementos que querés ver', placeholder: 'Ej: colores tierra, flores secas, arquitectura japonesa...' },
+      ],
+      esImagen: true,
+      prompt_imagen: `Create a professional creative mood board collage. NO text, NO labels, NO captions — pure visual references only.
+
+Project: {{proyecto}}
+Purpose: {{objetivo}}
 Visual style: {{estilo}}
 Main emotion: {{emocion}}
-Brand colors: {{colores_marca}}
-Design rules: coherent visual universe, show textures, colors palette, typography reference, photography style, and graphic elements. Professional creative direction quality.`
-      },
+Brand colors reference: {{colores_marca}}
+Visual references requested: {{referencias}}
+
+COMPOSITION RULES:
+- Zero text or typography anywhere in the image
+- Collage or grid of complementary visual references
+- Show: color palette inspiration, texture references, photographic style, lighting mood, material/surface references
+- Professional creative direction quality — agency-grade mood board
+- Colors should flow cohesively across the entire composition
+- Each visual element should reinforce the same emotional universe`
+    },
+  ]
+},
+
+// ============================================================
+// MATÍAS — FOTOGRAFÍA DE PRODUCTO IA (ACTUALIZADO)
+// ============================================================
+matias: {
+  nombre: 'Matías',
+  rol: 'Fotografía de Producto IA',
+  avatar: 'https://cdn.shopify.com/s/files/1/0800/6955/8502/files/Matias.png?v=1781476124',
+  color: 'linear-gradient(135deg,#0369a1,#0891b2)',
+  desc: 'Fotógrafo IA de productos. Insertá tu producto en cualquier escenario de forma realista y profesional.',
+  esVisual: true,
+  tutorial: {
+    titulo: '¿Cómo lograr mejores resultados con Matías?',
+    pasos: [
+      { icon: '📏', titulo: 'Describí bien tu producto', desc: 'El campo "Descripción del producto" es clave. Incluí: qué es, su tamaño real y su material. Ej: "anillo de plata, 2cm de diámetro, delicado". Esto le dice a la IA cuánto espacio debe ocupar en el escenario.' },
+      { icon: '📸', titulo: 'Usá buenas fotos de entrada', desc: 'La imagen de tu producto debe tener buena iluminación y el producto bien visible. La imagen de referencia (escenario) debe tener el mismo ángulo o perspectiva que querés en el resultado final.' },
+      { icon: '🎯', titulo: 'Elegí escenarios compatibles', desc: 'Para objetos pequeños (anillos, pendientes, cremas): elegí escenas de mesa, superficies o detalles. Para ropa o calzado: personas o maniquíes. El tamaño del producto debe tener sentido con el escenario.' },
+      { icon: '♻️', titulo: 'Si el resultado no convence, refiná', desc: 'Probá cambiar la descripción del producto, ser más específico en el tamaño, o elegir otro escenario. La IA mejora mucho con más contexto.' },
     ]
   },
+  herramientas: [
+    {
+      id: 'matias_escenarios',
+      icon: '📸',
+      nombre: 'Fotógrafo de Producto IA',
+      desc: 'Subí el escenario + tu producto y la IA los une con escala y física realistas.',
+      campos: [
+        { tipo: 'input', nombre: 'tipo_producto', label: '¿Qué tipo de producto es?', placeholder: 'Ej: anillo, frasco de crema, zapatilla, remera, perfume...' },
+        { tipo: 'input', nombre: 'tamano_real', label: 'Tamaño real del producto', placeholder: 'Ej: 2cm de diámetro / tamaño de un puño / 15cm de alto / pequeño/mediano/grande' },
+        { tipo: 'input', nombre: 'material_producto', label: 'Material y acabado del producto', placeholder: 'Ej: plata pulida, vidrio transparente, cuero marrón, tela de algodón blanca...' },
+        { tipo: 'input', nombre: 'descripcion_producto', label: 'Descripción visual completa del producto', placeholder: 'Ej: anillo de plata con piedra verde esmeralda, banda fina, delicado y minimalista' },
+        { tipo: 'select', nombre: 'posicion', label: '¿Cómo querés que quede posicionado?', opciones: ['Apoyado sobre la superficie', 'En mano o muñeca', 'Colgado o suspendido', 'Dentro del escenario naturalmente', 'En primer plano destacado'] },
+        { tipo: 'select', nombre: 'estilo_foto', label: 'Estilo fotográfico', opciones: ['Editorial premium', 'Lifestyle natural', 'Estudio minimalista', 'E-commerce limpio', 'Publicitario impactante'] },
+      ],
+      esImagen: true,
+      requiereImagenProducto: true,
+      requiereImagenReferencia: true,
+      prompt_imagen: `Professional product photography composite. CRITICAL: maintain absolute scale realism.
 
-  // ============================================================
-  // MATÍAS — FOTOGRAFÍA DE PRODUCTO IA
-  // ============================================================
-  matias: {
-    nombre: 'Matías',
-    rol: 'Fotografía de Producto IA',
-    avatar: 'https://cdn.shopify.com/s/files/1/0800/6955/8502/files/Matias.png?v=1781476124',
-    color: 'linear-gradient(135deg,#0369a1,#0891b2)',
-    desc: 'Fotógrafo IA de productos. Insertá tu producto en cualquier escenario de forma profesional.',
-    esVisual: true,
-    herramientas: [
-      {
-        id: 'matias_escenarios',
-        icon: '📸',
-        nombre: 'Fotógrafo de Producto IA',
-        desc: 'Subí tu imagen de referencia + tu producto y la IA los une en una foto profesional.',
-        campos: [
-          { tipo: 'input', nombre: 'descripcion_producto', label: 'Descripción del producto', placeholder: 'Ej: Crema hidratante en frasco blanco con tapa dorada' },
-          { tipo: 'select', nombre: 'estilo_foto', label: 'Estilo fotográfico', opciones: ['Editorial premium','Lifestyle natural','Estudio minimalista','E-commerce limpio','Publicitario impactante'] },
-        ],
-        esImagen: true,
-        requiereImagenProducto: true,
-        requiereImagenReferencia: true,
-        prompt_imagen: `Professional product photography composite.
-Product description: {{descripcion_producto}}
-Photography style: {{estilo_foto}}
-IMPORTANT: Keep the exact product from the product image (same colors, labels, shape, proportions, all details intact). Place it naturally in the scene/environment from the reference image with correct lighting, shadows and reflections matching the environment. The product is the absolute HERO. Editorial advertising quality.`
-      },
-      {
-        id: 'matias_mockup',
-        icon: '🖼️',
-        nombre: 'Generador de Mockups',
-        desc: 'Aplicá tu producto en escenarios realistas y profesionales.',
-        campos: [
-          { tipo: 'input', nombre: 'producto', label: 'Descripción del producto', placeholder: 'Ej: Remera blanca oversize' },
-          { tipo: 'input', nombre: 'fondo', label: 'Descripción del fondo o escenario', placeholder: 'Ej: Mesa de madera con plantas, luz natural' },
-          { tipo: 'select', nombre: 'estilo', label: 'Estilo', opciones: ['Minimalista','Natural/Orgánico','Estudio oscuro premium','Lifestyle urbano','Editorial moda'] },
-        ],
-        esImagen: true,
-        requiereImagen: true,
-        prompt_imagen: `Create a professional mockup. Product: {{producto}}. Background/scene: {{fondo}}. Style: {{estilo}}. Rules: maintain real proportions, real colors, original details, professional advertising quality. The product must look naturally integrated with correct shadows and lighting.`
-      },
-      {
-        id: 'matias_cambio_fondo',
-        icon: '🎭',
-        nombre: 'Cambio de Fondo',
-        desc: 'Reemplazá el fondo de tu imagen manteniendo el producto intacto.',
-        campos: [
-          { tipo: 'input', nombre: 'fondo', label: 'Describe el nuevo fondo que querés', placeholder: 'Ej: Fondo blanco limpio de estudio / Mármol negro elegante / Naturaleza verde' },
-          { tipo: 'select', nombre: 'estilo', label: 'Estilo', opciones: ['Estudio blanco','Estudio negro','Mármol premium','Natural con plantas','Fondo de color sólido','Lifestyle'] },
-        ],
-        esImagen: true,
-        requiereImagen: true,
-        prompt_imagen: `Replace only the background of this image. New background: {{fondo}}. Style: {{estilo}}. Rules: keep the original subject completely intact — same colors, proportions, lighting coherence. Integrate shadows correctly. Realistic result, no artificial cutouts. Professional photography quality.`
-      },
-      {
-        id: 'matias_escenarios_comerciales',
-        icon: '🏆',
-        nombre: 'Generador de Escenarios',
-        desc: 'Creá escenarios visuales comerciales para presentar tu producto.',
-        campos: [
-          { tipo: 'input', nombre: 'producto', label: 'Producto', placeholder: 'Ej: Perfume de lujo en frasco de vidrio' },
-          { tipo: 'select', nombre: 'escenario', label: 'Tipo de escenario', opciones: ['Lujo y elegancia','Natural y orgánico','Minimalista premium','Lifestyle urbano','Playa y verano','Navidad y festividades','Oficina y trabajo'] },
-          { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Editorial','Publicitario','E-commerce','Lifestyle','Premium'] },
-        ],
-        esImagen: true,
-        requiereImagen: true,
-        prompt_imagen: `Create a professional commercial scene for product photography. Product: {{producto}}. Scene type: {{escenario}}. Visual style: {{estilo}}. Rules: product is the absolute hero, create attractive visual context with coherent brand elements, generate editorial advertising quality. Maintain product protagonist and maximum sharpness.`
-      },
-      {
-        id: 'matias_eliminador_fondo',
-        icon: '✂️',
-        nombre: 'Eliminador de Fondo',
-        desc: 'Eliminá el fondo de tu imagen con máxima calidad y precisión.',
-        campos: [
-          { tipo: 'input', nombre: 'descripcion', label: 'Descripción del sujeto principal', placeholder: 'Ej: Frasco de crema cosmética / Zapatillas deportivas / Collar de plata' },
-        ],
-        esImagen: true,
-        requiereImagen: true,
-        prompt_imagen: `Remove the background from this image, keeping only the subject: {{descripcion}}. Rules: maximum quality, respect complex edges and fine details, do not alter colors or proportions, deliver clean transparency. The subject must remain perfectly intact.`
-      },
-      {
-        id: 'matias_mejorador',
-        icon: '⬆️',
-        nombre: 'Mejorador de Imagen',
-        desc: 'Mejorá la calidad, nitidez e iluminación de tus fotos de producto.',
-        campos: [
-          { tipo: 'select', nombre: 'objetivo', label: 'Qué querés mejorar', opciones: ['Más nitidez y detalle','Mayor resolución','Mejor iluminación','Corrección de color','Mejora general de calidad','Restauración'] },
-          { tipo: 'input', nombre: 'descripcion', label: 'Descripción de la imagen', placeholder: 'Ej: Foto de mi producto con poca luz y desenfoque' },
-        ],
-        esImagen: true,
-        requiereImagen: true,
-        prompt_imagen: `Enhance this product image. Improvement goal: {{objetivo}}. Product: {{descripcion}}. Rules: maintain real appearance, do not distort subjects, improve visual quality, correct imperfections, maintain natural colors. Deliver a professional advertising-quality version of the image.`
-      },
-      {
-        id: 'matias_director_produccion',
-        icon: '🎬',
-        nombre: 'Director de Producción',
-        desc: 'Storyboard, plan de tomas y dirección visual para tu producción audiovisual.',
-        campos: [
-          { tipo: 'input', nombre: 'producto', label: 'Producto o marca', placeholder: 'Ej: Nueva línea de skincare' },
-          { tipo: 'select', nombre: 'objetivo', label: 'Objetivo de la producción', opciones: ['Reel para Instagram','TikTok viral','Ad para Meta','Video de producto','Campaña de lanzamiento'] },
-          { tipo: 'select', nombre: 'duracion', label: 'Duración estimada', opciones: ['15 segundos','30 segundos','60 segundos','2-3 minutos'] },
-          { tipo: 'select', nombre: 'plataforma', label: 'Plataforma principal', opciones: ['Instagram','TikTok','YouTube','Meta Ads','Multicanal'] },
-          { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Editorial premium','Lifestyle natural','Minimalista','Dinámico y energético','Cinematográfico'] },
-        ],
-        prompt: `Sos Matías, Director de Producción Audiovisual de HM AI. Transformás ideas en producciones audiovisuales listas para grabar.
+PRODUCT DETAILS (use these to determine exact size in the scene):
+- Product type: {{tipo_producto}}
+- Real-world size: {{tamano_real}}
+- Material and finish: {{material_producto}}
+- Visual description: {{descripcion_producto}}
+- Positioning: {{posicion}}
 
-Perfil: {{perfil_marca}}
-Producto: {{producto}} | Objetivo: {{objetivo}} | Duración: {{duracion}} | Plataforma: {{plataforma}} | Estilo: {{estilo}}
+PHOTOGRAPHY STYLE: {{estilo_foto}}
+
+SCALE AND PHYSICS RULES (most important):
+- The product MUST appear at its correct real-world scale relative to the environment in the reference image. A ring should look ring-sized (tiny), a perfume bottle should look bottle-sized, a sneaker should look shoe-sized.
+- If the product is small (jewelry, small accessories): it must appear SMALL in the scene — do not enlarge it to fill the frame
+- The product must physically interact with surfaces correctly: if on a table, it must rest ON the surface with realistic shadow and contact point, not float above it
+- Gravity and surface contact must be convincing — soft surfaces (fabric, cushion) should show slight product weight/indentation if appropriate
+- Material properties must be preserved: metal should reflect, glass should refract, fabric should drape
+
+PRODUCT PRESERVATION RULES:
+- Keep EXACT colors, logos, labels, engravings and details from the product image
+- Do not alter proportions, shape or design elements
+- Match lighting direction from reference scene to product
+
+FINAL QUALITY:
+- Advertising photography quality
+- Seamless integration — product must look like it was photographed in that exact scene`
+    },
+    {
+      id: 'matias_mockup',
+      icon: '🖼️',
+      nombre: 'Generador de Mockups',
+      desc: 'Ponés tu producto en un escenario. Especificá el tamaño para resultados realistas.',
+      campos: [
+        { tipo: 'input', nombre: 'tipo_producto', label: '¿Qué tipo de producto es?', placeholder: 'Ej: remera, taza, cuadro, bolso, pendiente...' },
+        { tipo: 'input', nombre: 'tamano_real', label: 'Tamaño real del producto', placeholder: 'Ej: talla M / 30cm de alto / del tamaño de una palma / pequeño...' },
+        { tipo: 'input', nombre: 'material_producto', label: 'Material', placeholder: 'Ej: algodón blanco, cerámica beige, madera clara, cuero negro...' },
+        { tipo: 'input', nombre: 'descripcion_producto', label: 'Descripción visual del producto', placeholder: 'Ej: remera oversize blanca con print minimalista en el pecho' },
+        { tipo: 'input', nombre: 'escenario', label: 'Escenario deseado', placeholder: 'Ej: mesa de madera clara con luz natural lateral y plantas de fondo' },
+        { tipo: 'select', nombre: 'estilo', label: 'Estilo del mockup', opciones: ['Minimalista / Clean', 'Natural / Orgánico', 'Estudio oscuro premium', 'Lifestyle urbano', 'Editorial moda'] },
+      ],
+      esImagen: true,
+      requiereImagen: true,
+      prompt_imagen: `Create a professional product mockup with absolute scale and physics realism.
+
+PRODUCT:
+- Type: {{tipo_producto}}
+- Real size: {{tamano_real}}
+- Material: {{material_producto}}
+- Description: {{descripcion_producto}}
+
+SCENE: {{escenario}}
+STYLE: {{estilo}}
+
+SCALE RULES:
+- The product must appear at its EXACT real-world size. A mug should look mug-sized next to a table. A ring should be tiny. A t-shirt should be clothing-sized.
+- Do NOT scale the product up to fill the frame — keep it proportionally correct within the scene
+
+PHYSICS RULES:
+- Product must rest ON surfaces naturally with correct contact point and shadow
+- Soft surfaces (fabric, cushion) must show natural weight impression where product sits
+- Hard surfaces (marble, wood): sharp clean shadow under the product
+- No floating products — gravity must be evident
+
+PRODUCT PRESERVATION:
+- Keep exact colors, patterns, logos and proportions from uploaded image
+- Maintain material properties (fabric texture, ceramic finish, metal shine)
+- Match scene lighting to product for seamless integration
+
+QUALITY: professional advertising photography, publishable for e-commerce or social media`
+    },
+    {
+      id: 'matias_cambio_fondo',
+      icon: '🎭',
+      nombre: 'Cambio de Fondo',
+      desc: 'Reemplazá el fondo manteniendo el producto intacto con escala y física correctas.',
+      campos: [
+        { tipo: 'input', nombre: 'tipo_producto', label: '¿Qué producto es?', placeholder: 'Ej: frasco de perfume, collar, bolso, zapatilla...' },
+        { tipo: 'input', nombre: 'tamano_real', label: 'Tamaño real del producto', placeholder: 'Ej: 10cm de alto / pequeño / tamaño de un puño...' },
+        { tipo: 'input', nombre: 'nuevo_fondo', label: 'Describí el nuevo fondo', placeholder: 'Ej: mármol blanco con luz natural suave / fondo negro liso de estudio / madera con plantas' },
+        { tipo: 'select', nombre: 'estilo', label: 'Estilo del nuevo fondo', opciones: ['Estudio blanco limpio', 'Estudio negro premium', 'Mármol / piedra elegante', 'Natural con plantas', 'Color sólido flat', 'Lifestyle con ambiente'] },
+      ],
+      esImagen: true,
+      requiereImagen: true,
+      prompt_imagen: `Replace ONLY the background of this product image. Keep the product 100% intact.
+
+Product context: {{tipo_producto}}, real size: {{tamano_real}}
+New background: {{nuevo_fondo}}
+Style: {{estilo}}
+
+BACKGROUND REPLACEMENT RULES:
+- Remove existing background completely and replace with the new one
+- Keep the ORIGINAL PRODUCT exactly as-is: same position, size, colors, details, proportions
+- The product must sit on/in the new background with correct physics: shadow must match new light source direction, surface contact must be realistic
+- If product is small (jewelry, small accessories), it must remain small in the new background — do not recompose or rescale
+- Edge cutting must be pixel-perfect — no halos, no artifacts, no bleed from original background
+- New background lighting must wrap around the product naturally
+
+QUALITY: seamless background replacement, professional retouching quality, e-commerce ready`
+    },
+    {
+      id: 'matias_escenarios_comerciales',
+      icon: '🏆',
+      nombre: 'Generador de Escenarios Comerciales',
+      desc: 'Tu producto en escenas de marca potentes. Especificá qué es para que la escala sea real.',
+      campos: [
+        { tipo: 'input', nombre: 'tipo_producto', label: '¿Qué tipo de producto es?', placeholder: 'Ej: perfume, taza, joya, calzado, cosmético...' },
+        { tipo: 'input', nombre: 'tamano_real', label: 'Tamaño real del producto', placeholder: 'Ej: 15cm de alto / tamaño palma de la mano / objeto pequeño...' },
+        { tipo: 'input', nombre: 'descripcion_producto', label: 'Descripción del producto', placeholder: 'Ej: perfume de lujo en frasco de vidrio tallado con tapa dorada' },
+        { tipo: 'select', nombre: 'escenario', label: 'Tipo de escenario', opciones: ['Lujo y elegancia (mármol, seda, velas)', 'Natural y orgánico (madera, plantas, lino)', 'Minimalista premium (blanco, formas limpias)', 'Lifestyle urbano (café, ciudad, moderno)', 'Playa y verano (arena, conchas, luz dorada)', 'Festividades (guirnaldas, invierno, cálido)'] },
+        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Editorial de revista', 'Publicitario de marca', 'E-commerce premium', 'Lifestyle aspiracional'] },
+      ],
+      esImagen: true,
+      requiereImagen: true,
+      prompt_imagen: `Create a professional commercial scene for product photography.
+
+PRODUCT:
+- Type: {{tipo_producto}}
+- Real size: {{tamano_real}}
+- Description: {{descripcion_producto}}
+
+SCENE: {{escenario}}
+STYLE: {{estilo}}
+
+CRITICAL — SCALE AND INTEGRATION:
+- The product is the HERO but must appear at its CORRECT REAL-WORLD SIZE within the scene
+- Build the scene AROUND the product at its actual scale — do not grow the product to fill the frame
+- Small products (jewelry, cosmetics): they appear small but beautifully lit and sharply focused as the focal point
+- Large products (bags, shoes): they should dominate the scene proportionally
+- Physical integration: correct shadows, reflections, and surface interaction
+
+PRODUCT PRESERVATION:
+- Maintain exact product appearance from the uploaded image
+- Only enhance lighting and environment around it
+
+QUALITY: magazine editorial or high-end brand campaign quality`
+    },
+    {
+      id: 'matias_eliminador_fondo',
+      icon: '✂️',
+      nombre: 'Eliminador de Fondo',
+      desc: 'Eliminá el fondo con máxima precisión para usar el producto en cualquier diseño.',
+      campos: [
+        { tipo: 'input', nombre: 'tipo_producto', label: 'Tipo de producto', placeholder: 'Ej: frasco de crema, zapatillas, collar de plata, bolso...' },
+        { tipo: 'input', nombre: 'detalle_especial', label: 'Detalles delicados a preservar (opcional)', placeholder: 'Ej: cadena fina, logo bordado, hebillas metálicas, tiras delgadas...' },
+      ],
+      esImagen: true,
+      requiereImagen: true,
+      prompt_imagen: `Remove the background from this product image with maximum precision.
+
+Product: {{tipo_producto}}
+Delicate details to preserve: {{detalle_especial}}
+
+CUTOUT RULES:
+- Remove ALL background pixels — deliver clean product isolation
+- Preserve every detail of the product: fine chains, thin straps, logo details, engravings, hair-thin elements
+- Maintain original product colors, textures and finish exactly
+- No halos, no color fringing, no background bleed at edges
+- Sharp, clean edge where product ends
+- Keep any cast shadow if it adds realism for product presentation
+- Result must be ready for placement on any new background or design
+
+QUALITY: professional retouching / clipping path quality, e-commerce and print ready`
+    },
+    {
+      id: 'matias_mejorador',
+      icon: '⬆️',
+      nombre: 'Mejorador de Imagen de Producto',
+      desc: 'Mejorá calidad, iluminación y nitidez de tu foto de producto existente.',
+      campos: [
+        { tipo: 'input', nombre: 'tipo_producto', label: 'Tipo de producto', placeholder: 'Ej: joya, ropa, cosmético, calzado...' },
+        { tipo: 'select', nombre: 'objetivo', label: 'Qué querés mejorar principalmente', opciones: ['Nitidez y detalle', 'Iluminación y contraste', 'Corrección de color', 'Calidad general / upscale', 'Aspecto más profesional / menos casero', 'Restauración de foto deteriorada'] },
+        { tipo: 'input', nombre: 'problema_actual', label: 'Problema principal de la foto actual', placeholder: 'Ej: luz de fondo muy fuerte, producto se ve opaco, está pixelada, fondo casero...' },
+      ],
+      esImagen: true,
+      requiereImagen: true,
+      prompt_imagen: `Enhance this product photograph professionally.
+
+Product type: {{tipo_producto}}
+Primary improvement goal: {{objetivo}}
+Current problem: {{problema_actual}}
+
+ENHANCEMENT RULES:
+- Maintain the EXACT product — same colors, proportions, details, logos, textures
+- Do NOT alter or recompose the scene — only enhance quality parameters
+- Improvement focus: {{objetivo}}
+- Increase perceived quality to match professional product photography standards
+- If correcting color: use natural, true-to-product colors — avoid over-saturating
+- If improving lighting: maintain product's material properties (matte stays matte, metal stays metallic)
+- Final result must look like it was shot by a professional product photographer
+
+QUALITY: e-commerce and advertising ready, no artificial or over-processed look`
+    },
+    {
+      id: 'matias_director_produccion',
+      icon: '🎬',
+      nombre: 'Director de Producción',
+      desc: 'Plan de tomas, storyboard y dirección visual para tu producción de contenido.',
+      campos: [
+        { tipo: 'input', nombre: 'producto', label: 'Producto o marca', placeholder: 'Ej: nueva línea de skincare / colección de bolsos...' },
+        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo de la producción', opciones: ['Reel para Instagram', 'TikTok viral', 'Ad para Meta Ads', 'Fotos para e-commerce', 'Campaña de lanzamiento', 'Contenido evergreen'] },
+        { tipo: 'select', nombre: 'duracion', label: 'Duración estimada (si es video)', opciones: ['15 segundos', '30 segundos', '60 segundos', '2-3 minutos', 'Solo fotos (sin video)'] },
+        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Editorial premium', 'Lifestyle natural', 'Minimalista y limpio', 'Dinámico y rápido', 'Cinematográfico'] },
+        { tipo: 'input', nombre: 'referencia_visual', label: 'Referencia visual o inspiración', placeholder: 'Ej: estilo Zara, paleta tierra, fotografía editorial Vogue...' },
+      ],
+      prompt: `Sos Matías, Director de Fotografía y Producción Audiovisual de HM AI. Transformás ideas en planes de producción concretos y ejecutables, pensados para que cualquier equipo pueda llevarlos a la realidad.
+
+Perfil de Marca: {{perfil_marca}}
+Producto: {{producto}} | Objetivo: {{objetivo}} | Duración: {{duracion}} | Estilo: {{estilo}} | Referencia: {{referencia_visual}}
 
 OUTPUT:
-**CONCEPTO VISUAL** — La idea central de la producción. Por qué funcionará para este objetivo.
-**STORYBOARD COMPLETO:**
-  Escena 1 — Descripción visual detallada + duración + texto en pantalla + transición.
-  Escena 2 — ídem.
-  Escena 3 — ídem.
-  Escena 4 — ídem.
-  Escena 5 — ídem.
-  (Más escenas si la duración lo requiere)
-**PLAN DE TOMAS:**
-  Para cada escena: Plano recomendado / Movimiento de cámara / Acción principal / Tiempo.
-**REQUERIMIENTOS DE PRODUCCIÓN** — Equipamiento / Locación / Iluminación / Personas / Props.
-**EDICIÓN RECOMENDADA** — Ritmo / Cortes / Música / Efectos / Color grading.
-**MÚSICA SUGERIDA** — Tipo, mood, referencias.
-**CHECKLIST DE GRABACIÓN** — Todo lo que necesitás antes de grabar.
-**PROMPT PARA IA** — Si necesitás generar escenas con IA: prompt detallado listo para usar.
+**CONCEPTO VISUAL** — La idea central, estética dominante y por qué va a funcionar para este producto y objetivo.
+**DIRECCIÓN DE ARTE** — Paleta de colores, iluminación, materiales y texturas, props sugeridos, sensación general.
+**STORYBOARD:**
+  Para cada escena/toma: Número de toma / Descripción visual / Tipo de plano / Movimiento / Duración / Elemento clave.
+**PLAN DE PRODUCCIÓN:**
+  Equipamiento necesario (cámara, luces, fondos, accesorios).
+  Locación o set recomendado.
+  Personas necesarias (modelos, manos, crew).
+  Props y elementos de escena.
+**ORDEN DE GRABACIÓN** — Secuencia eficiente para optimizar el tiempo en producción.
+**EDICIÓN RECOMENDADA** — Ritmo de cortes, música, color grading, efectos, transiciones.
+**ERRORES A EVITAR** — Los más frecuentes en producciones de este tipo de producto.
+**CHECKLIST PRE-PRODUCCIÓN** — Lista completa para no llegar al set sin algo importante.
 
-Como director audiovisual profesional. Listo para producir.`
-      },
-    ]
-  },
+Como director de fotografía con experiencia en marcas de moda, cosmética y lifestyle.`
+    },
+  ]
+},
 
 }; // fin
