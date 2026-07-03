@@ -1718,6 +1718,8 @@ Sistema medible y escalable.`
 Perfil: {{perfil_marca}}
 Herramienta 1: {{herramienta_principal}} | Herramienta 2: {{herramienta_secundaria}} | Proceso: {{proceso}} | Objetivo: {{objetivo}} | Nivel: {{nivel}}
 
+Herramienta 2: {{herramienta_secundaria}} | Proceso: {{proceso}} | Objetivo: {{objetivo}} | Nivel: {{nivel}}
+
 OUTPUT:
 **RESUMEN EJECUTIVO** — Problema que resuelve, impacto, oportunidad detectada.
 **INTEGRACIÓN RECOMENDADA** — Nombre / Objetivo / Resultado / Beneficio principal.
@@ -1950,33 +1952,6 @@ OUTPUT:
 En lenguaje claro. Conectando datos con decisiones.`
       },
       {
-        id: 'victoria_catalogos',
-        icon: '📦',
-        nombre: 'Generadora de Catálogos',
-        desc: 'Organizá productos o servicios estratégicamente para vender más.',
-        campos: [
-          { tipo: 'select', nombre: 'tipo_catalogo', label: '¿Qué querés organizar?', opciones: ['Productos','Servicios','E-commerce','Portfolio','Menú','Mayorista'] },
-          { tipo: 'input', nombre: 'cantidad', label: 'Cantidad aproximada de ítems', placeholder: 'Ej: 30 productos' },
-          { tipo: 'select', nombre: 'objetivo', label: 'Objetivo', opciones: ['Venta directa','Presentación a clientes','Distribuidores/Mayoristas','Organización interna'] },
-          { tipo: 'select', nombre: 'formato', label: 'Formato', opciones: ['PDF digital','Web','WhatsApp','Impreso','Presentación'] },
-        ],
-        prompt: `Sos Victoria, COO y Especialista en Organización Comercial de HM AI. Construís estructuras comerciales que ayudan a vender más facilitando la decisión de compra.
-
-Perfil: {{perfil_marca}}
-Tipo: {{tipo_catalogo}} | Cantidad: {{cantidad}} | Objetivo: {{objetivo}} | Formato: {{formato}}
-
-OUTPUT:
-**RESUMEN EJECUTIVO** — Objetivo, tipo de organización con mejor rendimiento, oportunidad.
-**ESTRUCTURA DEL CATÁLOGO** — Portada / Intro / Categorías / Productos / Beneficios / Testimonios / FAQ / CTA / Contacto.
-**CATEGORÍAS RECOMENDADAS** — Principales / Subcategorías / Orden / Jerarquía con lógica comercial.
-**ORGANIZACIÓN** — Qué mostrar primero / destacar / agrupar / separar / eliminar.
-**ESTRATEGIA DE PRESENTACIÓN** — Productos estrella / complementarios / upsells / cross-sell / ofertas.
-**CTA** + **15 CTAs Alternativos**.
-**EXPERIENCIA DEL CLIENTE** — Facilidad de navegación, claridad, tiempo de decisión, conversión.
-**PLAN DE IMPLEMENTACIÓN** — Paso 1 / 2 / 3 / 4.
-**CONCLUSIÓN** — Qué categoría destacar primero, mejora de más impacto, error a evitar.`
-      },
-      {
         id: 'victoria_analista_competencia',
         icon: '🔭',
         nombre: 'Analista de Competencia',
@@ -2165,7 +2140,7 @@ OUTPUT:
 **DIAGNÓSTICO** — Brecha entre percepción actual y deseada. Qué la genera y qué consecuencias tiene.
 **POSICIONAMIENTO RECOMENDADO** — Definición clara: quién sos, para quién, qué resolvés, qué te diferencia.
 **MENSAJE CENTRAL** — La frase que debe estar en todo: bio, propuestas, web, contenido.
-**PROPUESTA DE VALOR** — Versión corta y extendida.
+**PROPUESTA DE VALOR** — Versión corta y versión extendida.
 **PILARES DE POSICIONAMIENTO** — 3 a 5 elementos que deben repetirse consistentemente.
 **COMUNICACIÓN RECOMENDADA** — Cómo hablar, qué mostrar, qué evitar, qué historia contar.
 **PLAN DE POSICIONAMIENTO** — 30 días / 90 días / 6 meses con acciones concretas.
@@ -2234,15 +2209,10 @@ Tipo: {{tipo_mensaje}} | Producto: {{producto_servicio}} | Formalidad: {{formali
 
 OUTPUT:
 **SCRIPT PRINCIPAL** — Completo con: apertura / desarrollo / generación de interés / CTA. Listo para copiar y pegar.
-**VARIANTES:**
-  Profesional
-  Cercana
-  Consultiva
-  Directa
-  Premium
+**VARIANTES:** Profesional / Cercana / Consultiva / Directa / Premium.
 **CTA PRINCIPAL** + **15 CTAs Alternativos** — Clasificados: Agendar / Responder / Comprar / Información / Recuperar conversación.
 **ADAPTACIONES** — Versión para lead frío / tibio / caliente / cliente anterior / cliente actual.
-**RECOMENDACIONES** — Momento ideal de envío / Frecuencia / Errores a evitar / Señales de interés / Señales de alerta / Próximo paso.
+**RECOMENDACIONES** — Momento ideal de envío / Frecuencia / Errores a evitar / Señales de interés / Próximo paso.
 **OBJECIONES POTENCIALES** — Qué significan / Cómo responder / Qué evitar.
 **POTENCIAL** — Capacidad de generar respuesta / conversación / venta (Alto/Medio/Bajo).
 
@@ -2297,12 +2267,7 @@ OUTPUT:
 **DIAGNÓSTICO** — Qué está pasando realmente, por qué no cierra, qué objeción subyace.
 **ESTRATEGIA DE CIERRE** — Enfoque recomendado según la situación y temperatura.
 **TÉCNICAS DE CIERRE APLICADAS:**
-  Cierre consultivo — pregunta que genera decisión.
-  Cierre por valor — reforzar la transformación.
-  Cierre por urgencia/escasez — real, no inventada.
-  Cierre por decisión — simplificar la elección.
-  Cierre de prueba — mini compromiso previo.
-**SCRIPTS PARA CADA TÉCNICA** — Listos para usar en el canal seleccionado.
+  Cierre consultivo / Por valor / Por urgencia-escasez / Por decisión / De prueba. Script para cada técnica.
 **MENSAJES POST-PROPUESTA** — Seguimiento sin presionar: día 1 / día 3 / día 7 / día 15.
 **OBJECIONES ESPECÍFICAS** — Para cada objeción que pueda aparecer: respuesta natural y efectiva.
 **ERRORES QUE PIERDEN VENTAS** — En el cierre y cómo evitarlos.
@@ -2385,13 +2350,8 @@ Tipo: {{tipo_secuencia}} | Canal: {{canal}} | Producto final: {{producto_final}}
 
 OUTPUT:
 **ESTRATEGIA DE LA SECUENCIA** — Objetivo, lógica de progresión, emoción que se construye.
-**SECUENCIA COMPLETA** — Para cada mensaje/email:
-  Día N — [Asunto/Encabezado]
-  Objetivo: qué debe lograr este mensaje.
-  Contenido: mensaje completo listo para usar.
-  CTA: acción concreta.
-(Continuar por toda la duración seleccionada)
-**PROGRESIÓN EMOCIONAL** — Cómo evoluciona la conversación: confianza → interés → deseo → acción.
+**SECUENCIA COMPLETA** — Para cada mensaje/email: Día N / Asunto / Objetivo / Contenido completo / CTA.
+**PROGRESIÓN EMOCIONAL** — confianza → interés → deseo → acción.
 **MENSAJES DE RESCATE** — Si no abre / no responde / dice que no.
 **ERRORES A EVITAR** — Los que generan unsubscribes o bloqueos.
 **MÉTRICAS** — Qué medir en cada mensaje para optimizar.
@@ -2419,7 +2379,7 @@ OUTPUT:
 **5 VARIANTES** — Distintos enfoques: emocional / directo / urgente / beneficio / storytelling.
 **ASUNTO / ENCABEZADO** — Principal + 10 alternativos.
 **SEGMENTACIÓN RECOMENDADA** — Cómo dividir la base para mejor tasa de conversión.
-**SECUENCIA DE 3 MENSAJES** — Si nadie compra con el primero: mensaje 2 (recordatorio) y mensaje 3 (última llamada).
+**SECUENCIA DE 3 MENSAJES** — Mensaje 1 / recordatorio / última llamada.
 **TIMING RECOMENDADO** — Mejor día y hora para enviar según el tipo de difusión.
 **ERRORES QUE QUEMAN LA BASE** — Los más comunes y cómo evitarlos.
 **MÉTRICAS** — Qué medir para saber si funcionó.
@@ -2446,11 +2406,8 @@ OUTPUT:
 **DIAGNÓSTICO** — Por qué desapareció, qué significa el silencio, qué probabilidad de recuperación.
 **ESTRATEGIA** — Enfoque recomendado según temperatura y tiempo de silencio.
 **SECUENCIA DE FOLLOW UP:**
-  Mensaje 1 (Día 1 de seguimiento) — Objetivo + mensaje completo.
-  Mensaje 2 (Día 3) — Objetivo + mensaje completo.
-  Mensaje 3 (Día 7) — Objetivo + mensaje completo.
-  Mensaje 4 (Día 14) — Objetivo + mensaje completo.
-  Mensaje 5 (Día 30 — último intento) — Objetivo + mensaje completo.
+  Mensaje 1 (Día 1) / Mensaje 2 (Día 3) / Mensaje 3 (Día 7) / Mensaje 4 (Día 14) / Mensaje 5 (Día 30 — último intento).
+  Para cada uno: Objetivo + mensaje completo listo para usar.
 **HORARIOS RECOMENDADOS** — Mejor momento para cada mensaje.
 **VARIANTES POR TEMPERATURA** — Caliente / Tibio / Frío / Muy frío.
 **SEÑALES DE INTERÉS** — Cómo reconocer si está listo para comprar.
@@ -2475,15 +2432,8 @@ Tipo: {{tipo_negocio}} | Ticket: {{ticket}} | Proceso actual: {{proceso_actual}}
 
 OUTPUT:
 **DIAGNÓSTICO** — Estado actual del proceso comercial, principales problemas, oportunidad.
-**PROCESO COMERCIAL COMPLETO** — Etapa por etapa:
-  Etapa 1: Captación de leads — cómo y desde dónde.
-  Etapa 2: Primer contacto — tiempo máximo de respuesta y cómo.
-  Etapa 3: Calificación — preguntas para saber si es cliente ideal.
-  Etapa 4: Presentación — demo, propuesta o reunión.
-  Etapa 5: Seguimiento — protocolo post-propuesta.
-  Etapa 6: Cierre — cómo pedir la decisión.
-  Etapa 7: Onboarding — primeros pasos del nuevo cliente.
-  Etapa 8: Retención y recompra — cómo fidelizar.
+**PROCESO COMERCIAL COMPLETO:**
+  Etapa 1: Captación / Etapa 2: Primer contacto / Etapa 3: Calificación / Etapa 4: Presentación / Etapa 5: Seguimiento / Etapa 6: Cierre / Etapa 7: Onboarding / Etapa 8: Retención y recompra.
 **SCRIPTS POR ETAPA** — Mensajes clave para cada momento.
 **HERRAMIENTAS** — CRM y tools recomendadas para este tipo y tamaño de negocio.
 **MÉTRICAS DEL PROCESO** — KPIs por etapa.
@@ -2495,41 +2445,41 @@ Proceso profesional, escalable, sin depender del talento de una sola persona.`
     ]
   },
 
- // ============================================================
-// VALERIA — DISEÑO VISUAL IA (v3 — banners completos con texto)
-// ============================================================
-valeria: {
-  nombre: 'Valeria',
-  rol: 'Diseño Visual IA',
-  avatar: 'https://cdn.shopify.com/s/files/1/0800/6955/8502/files/Valeria.png?v=1781476124',
-  color: 'linear-gradient(135deg,#be185d,#9333ea)',
-  desc: 'Diseñadora IA. Banners, flyers, portadas y ads completos y listos para publicar.',
-  esVisual: true,
-  tutorial: {
-    titulo: '¿Cómo usar a Valeria?',
-    pasos: [
-      { icon: '🎨', titulo: 'Completá los campos de texto', desc: 'Escribí el título, subtítulo y CTA que querés en la pieza. Valeria los incorpora directamente en el diseño — no necesitás editar después.' },
-      { icon: '📌', titulo: 'La marca se aplica automáticamente', desc: 'Valeria toma los colores, tipografía y estilo visual de tu perfil de marca. Si querés otros colores, elegí "Personalizados" y cargá los HEX.' },
-      { icon: '🖼️', titulo: 'La imagen es opcional', desc: 'Podés subir tu logo, producto, foto de referencia o persona. Si no subís nada, Valeria diseña igual usando composición visual pura.' },
-    ]
-  },
-  herramientas: [
-    {
-      id: 'valeria_banner',
-      icon: '🖼️',
-      nombre: 'Generadora de Banners',
-      desc: 'Banner publicitario completo con texto, diseño y colores de tu marca. Listo para publicar.',
-      campos: [
-        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del banner', opciones: ['Venta', 'Promoción', 'Lanzamiento de producto', 'Branding', 'Evento', 'Captación de leads'] },
-        { tipo: 'select', nombre: 'tamano', label: 'Tamaño / Formato', opciones: ['Feed Instagram (1:1)', 'Historia vertical (9:16)', 'Facebook cover (16:9)', 'Web / Landing (16:9)', 'Display / Banner horizontal', 'Personalizado'] },
-        { tipo: 'input', nombre: 'titulo', label: 'Texto principal', placeholder: 'Ej: 50% OFF esta semana' },
-        { tipo: 'input', nombre: 'subtitulo', label: 'Texto secundario (opcional)', placeholder: 'Ej: Solo hasta el domingo' },
-        { tipo: 'input', nombre: 'cta', label: 'CTA / llamado a la acción (opcional)', placeholder: 'Ej: Consultá ahora · Comprá aquí · Escribinos' },
-        { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Blanco y negro', 'Personalizados (especificá abajo)'] },
-        { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (opcional — si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
-      ],
-      esImagen: true,
-      prompt_imagen: `You are Valeria, Senior Graphic Designer at HM AI. Generate ONE complete, final, professional advertising banner ready to publish. No mockups. No explanations. Only the finished design.
+  // ============================================================
+  // VALERIA — DISEÑO VISUAL IA (v3 — banners completos con texto)
+  // ============================================================
+  valeria: {
+    nombre: 'Valeria',
+    rol: 'Diseño Visual IA',
+    avatar: 'https://cdn.shopify.com/s/files/1/0800/6955/8502/files/Valeria.png?v=1781476124',
+    color: 'linear-gradient(135deg,#be185d,#9333ea)',
+    desc: 'Diseñadora IA. Banners, flyers, portadas y ads completos y listos para publicar.',
+    esVisual: true,
+    tutorial: {
+      titulo: '¿Cómo usar a Valeria?',
+      pasos: [
+        { icon: '🎨', titulo: 'Completá los campos de texto', desc: 'Escribí el título, subtítulo y CTA que querés en la pieza. Valeria los incorpora directamente en el diseño — no necesitás editar después.' },
+        { icon: '📌', titulo: 'La marca se aplica automáticamente', desc: 'Valeria toma los colores, tipografía y estilo visual de tu perfil de marca. Si querés otros colores, elegí "Personalizados" y cargá los HEX.' },
+        { icon: '🖼️', titulo: 'La imagen es opcional', desc: 'Podés subir tu logo, producto, foto de referencia o persona. Si no subís nada, Valeria diseña igual usando composición visual pura.' },
+      ]
+    },
+    herramientas: [
+      {
+        id: 'valeria_banner',
+        icon: '🖼️',
+        nombre: 'Generadora de Banners',
+        desc: 'Banner publicitario completo con texto, diseño y colores de tu marca. Listo para publicar.',
+        campos: [
+          { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del banner', opciones: ['Venta', 'Promoción', 'Lanzamiento de producto', 'Branding', 'Evento', 'Captación de leads'] },
+          { tipo: 'select', nombre: 'tamano', label: 'Tamaño / Formato', opciones: ['Feed Instagram (1:1)', 'Historia vertical (9:16)', 'Facebook cover (16:9)', 'Web / Landing (16:9)', 'Display / Banner horizontal', 'Personalizado'] },
+          { tipo: 'input', nombre: 'titulo', label: 'Texto principal', placeholder: 'Ej: 50% OFF esta semana' },
+          { tipo: 'input', nombre: 'subtitulo', label: 'Texto secundario (opcional)', placeholder: 'Ej: Solo hasta el domingo' },
+          { tipo: 'input', nombre: 'cta', label: 'CTA / llamado a la acción (opcional)', placeholder: 'Ej: Consultá ahora · Comprá aquí · Escribinos' },
+          { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Blanco y negro', 'Personalizados (especificá abajo)'] },
+          { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (opcional — si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
+        ],
+        esImagen: true,
+        prompt_imagen: `You are Valeria, Senior Graphic Designer at HM AI. Generate ONE complete, final, professional advertising banner ready to publish. No mockups. No explanations. Only the finished design.
 
 FORMAT: {{tamano}}
 OBJECTIVE: {{objetivo}}
@@ -2557,24 +2507,24 @@ DESIGN RULES:
 - Design for conversion — the CTA must be visually distinct (button, box, contrasting color)
 - Professional advertising agency quality
 - One complete, final banner. Nothing else.`
-    },
-    {
-      id: 'valeria_flyer',
-      icon: '📄',
-      nombre: 'Generadora de Flyers',
-      desc: 'Flyer publicitario completo listo para publicar o imprimir.',
-      campos: [
-        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del flyer', opciones: ['Promoción / Descuento', 'Evento', 'Lanzamiento', 'Captación de clientes', 'Branding / Institucional'] },
-        { tipo: 'select', nombre: 'formato', label: 'Formato', opciones: ['Instagram Feed cuadrado (1:1)', 'Historia vertical (9:16)', 'Impresión A4 vertical', 'WhatsApp / Mensaje directo'] },
-        { tipo: 'input', nombre: 'titulo', label: 'Título principal', placeholder: 'Ej: Gran liquidación de temporada' },
-        { tipo: 'input', nombre: 'texto_secundario', label: 'Texto secundario (opcional)', placeholder: 'Ej: Descuentos de hasta 60% en toda la tienda' },
-        { tipo: 'input', nombre: 'cta', label: 'CTA (opcional)', placeholder: 'Ej: Escribinos al 11-1234-5678 · Ver más en @marca' },
-        { tipo: 'input', nombre: 'info_extra', label: 'Info adicional (opcional)', placeholder: 'Ej: Válido hasta el 31/12 · Solo para socios · Código: PROMO30' },
-        { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Blanco y negro', 'Personalizados (especificá abajo)'] },
-        { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
-      ],
-      esImagen: true,
-      prompt_imagen: `You are Valeria, Senior Advertising Designer at HM AI. Generate ONE complete professional advertising flyer, ready to publish or print. No descriptions. No explanations. Only the finished flyer.
+      },
+      {
+        id: 'valeria_flyer',
+        icon: '📄',
+        nombre: 'Generadora de Flyers',
+        desc: 'Flyer publicitario completo listo para publicar o imprimir.',
+        campos: [
+          { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del flyer', opciones: ['Promoción / Descuento', 'Evento', 'Lanzamiento', 'Captación de clientes', 'Branding / Institucional'] },
+          { tipo: 'select', nombre: 'formato', label: 'Formato', opciones: ['Instagram Feed cuadrado (1:1)', 'Historia vertical (9:16)', 'Impresión A4 vertical', 'WhatsApp / Mensaje directo'] },
+          { tipo: 'input', nombre: 'titulo', label: 'Título principal', placeholder: 'Ej: Gran liquidación de temporada' },
+          { tipo: 'input', nombre: 'texto_secundario', label: 'Texto secundario (opcional)', placeholder: 'Ej: Descuentos de hasta 60% en toda la tienda' },
+          { tipo: 'input', nombre: 'cta', label: 'CTA (opcional)', placeholder: 'Ej: Escribinos al 11-1234-5678 · Ver más en @marca' },
+          { tipo: 'input', nombre: 'info_extra', label: 'Info adicional (opcional)', placeholder: 'Ej: Válido hasta el 31/12 · Solo para socios · Código: PROMO30' },
+          { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Blanco y negro', 'Personalizados (especificá abajo)'] },
+          { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
+        ],
+        esImagen: true,
+        prompt_imagen: `You are Valeria, Senior Advertising Designer at HM AI. Generate ONE complete professional advertising flyer, ready to publish or print. No descriptions. No explanations. Only the finished flyer.
 
 FORMAT: {{formato}}
 OBJECTIVE: {{objetivo}}
@@ -2598,27 +2548,26 @@ DESIGN RULES:
 - Capture attention in under 3 seconds — strong visual entry point
 - Clear visual hierarchy: title → supporting text → additional info → CTA
 - CTA must stand out visually (contrasting button or box)
-- Adapt composition fully to the selected format (vertical/square proportions)
+- Adapt composition fully to the selected format
 - If image uploaded: use as main visual, properly integrated
 - If no image: strong typographic and graphic composition using brand identity
-- Avoid visual saturation — clean, purposeful design
 - Professional publishing quality — ready to post on Instagram or send via WhatsApp`
-    },
-    {
-      id: 'valeria_portada',
-      icon: '🎨',
-      nombre: 'Generadora de Portadas',
-      desc: 'Portadas impactantes para reels, cursos, ebooks o YouTube con texto incluido.',
-      campos: [
-        { tipo: 'select', nombre: 'tipo', label: 'Tipo de portada', opciones: ['Reel / TikTok (vertical 9:16)', 'Ebook / Guía (vertical A4)', 'Curso online (16:9 horizontal)', 'YouTube thumbnail (16:9)', 'Presentación / Slide (16:9)'] },
-        { tipo: 'input', nombre: 'titulo', label: 'Título principal', placeholder: 'Ej: Cómo conseguir 1000 clientes en 90 días' },
-        { tipo: 'input', nombre: 'subtitulo', label: 'Subtítulo (opcional)', placeholder: 'Ej: La guía definitiva para agencias' },
-        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista y limpio', 'Moderno y dinámico', 'Premium / oscuro', 'Editorial suave', 'Impactante / gran contraste'] },
-        { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Blanco y negro', 'Personalizados (especificá abajo)'] },
-        { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
-      ],
-      esImagen: true,
-      prompt_imagen: `You are Valeria, Senior Editorial Designer at HM AI. Generate ONE complete professional cover with text, ready to use. No mockups. No explanations. Only the finished cover.
+      },
+      {
+        id: 'valeria_portada',
+        icon: '🎨',
+        nombre: 'Generadora de Portadas',
+        desc: 'Portadas impactantes para reels, cursos, ebooks o YouTube con texto incluido.',
+        campos: [
+          { tipo: 'select', nombre: 'tipo', label: 'Tipo de portada', opciones: ['Reel / TikTok (vertical 9:16)', 'Ebook / Guía (vertical A4)', 'Curso online (16:9 horizontal)', 'YouTube thumbnail (16:9)', 'Presentación / Slide (16:9)'] },
+          { tipo: 'input', nombre: 'titulo', label: 'Título principal', placeholder: 'Ej: Cómo conseguir 1000 clientes en 90 días' },
+          { tipo: 'input', nombre: 'subtitulo', label: 'Subtítulo (opcional)', placeholder: 'Ej: La guía definitiva para agencias' },
+          { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista y limpio', 'Moderno y dinámico', 'Premium / oscuro', 'Editorial suave', 'Impactante / gran contraste'] },
+          { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Blanco y negro', 'Personalizados (especificá abajo)'] },
+          { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
+        ],
+        esImagen: true,
+        prompt_imagen: `You are Valeria, Senior Editorial Designer at HM AI. Generate ONE complete professional cover with text, ready to use. No mockups. No explanations. Only the finished cover.
 
 TYPE: {{tipo}}
 VISUAL STYLE: {{estilo}}
@@ -2638,28 +2587,26 @@ TEXT TO INCLUDE:
 DESIGN RULES:
 - Title must be the absolute visual focus — large, bold, immediately readable
 - Composition must feel intentional and high-impact, even at thumbnail size
-- If image uploaded: integrate as background or main visual element; overlay text with sufficient contrast
-- If no image: create strong typographic + graphic composition
 - Match the cover proportions exactly to the selected type
 - Maximum CTR-optimized design — must stand out in a feed or video grid
 - Professional quality matching top educational or media brands`
-    },
-    {
-      id: 'valeria_ads',
-      icon: '📢',
-      nombre: 'Generadora de Creatividades para Ads',
-      desc: 'Creatividades completas para Meta Ads con texto, oferta y CTA incluidos.',
-      campos: [
-        { tipo: 'input', nombre: 'producto', label: 'Producto o servicio que promocionás', placeholder: 'Ej: Mentoría de marketing digital / Curso de Instagram' },
-        { tipo: 'input', nombre: 'oferta', label: 'Oferta principal', placeholder: 'Ej: Primer mes gratis · 50% OFF · 2x1 esta semana' },
-        { tipo: 'input', nombre: 'beneficio', label: 'Beneficio o promesa principal', placeholder: 'Ej: Conseguí tus primeros 10 clientes en 30 días' },
-        { tipo: 'input', nombre: 'cta', label: 'CTA', placeholder: 'Ej: Empezá hoy · Consultá gratis · Ver más' },
-        { tipo: 'select', nombre: 'formato', label: 'Formato del ad', opciones: ['Feed cuadrado (1:1)', 'Historia vertical (9:16)', 'Banner horizontal (16:9)', 'Feed vertical (4:5)'] },
-        { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Blanco y negro', 'Personalizados (especificá abajo)'] },
-        { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
-      ],
-      esImagen: true,
-      prompt_imagen: `You are Valeria, Performance Creative Designer at HM AI. Generate ONE complete advertising creative ready for Meta Ads campaigns. No explanations. Only the finished ad creative.
+      },
+      {
+        id: 'valeria_ads',
+        icon: '📢',
+        nombre: 'Generadora de Creatividades para Ads',
+        desc: 'Creatividades completas para Meta Ads con texto, oferta y CTA incluidos.',
+        campos: [
+          { tipo: 'input', nombre: 'producto', label: 'Producto o servicio que promocionás', placeholder: 'Ej: Mentoría de marketing digital / Curso de Instagram' },
+          { tipo: 'input', nombre: 'oferta', label: 'Oferta principal', placeholder: 'Ej: Primer mes gratis · 50% OFF · 2x1 esta semana' },
+          { tipo: 'input', nombre: 'beneficio', label: 'Beneficio o promesa principal', placeholder: 'Ej: Conseguí tus primeros 10 clientes en 30 días' },
+          { tipo: 'input', nombre: 'cta', label: 'CTA', placeholder: 'Ej: Empezá hoy · Consultá gratis · Ver más' },
+          { tipo: 'select', nombre: 'formato', label: 'Formato del ad', opciones: ['Feed cuadrado (1:1)', 'Historia vertical (9:16)', 'Banner horizontal (16:9)', 'Feed vertical (4:5)'] },
+          { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Blanco y negro', 'Personalizados (especificá abajo)'] },
+          { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
+        ],
+        esImagen: true,
+        prompt_imagen: `You are Valeria, Performance Creative Designer at HM AI. Generate ONE complete advertising creative ready for Meta Ads campaigns. No explanations. Only the finished ad creative.
 
 FORMAT: {{formato}}
 
@@ -2682,27 +2629,24 @@ PERFORMANCE DESIGN RULES:
 - Benefit text supports and justifies the offer
 - CTA must look like a button or clear action element with high contrast
 - Stop-the-scroll visual — must compete in a dense social media feed
-- If image uploaded: use as primary visual, integrate offer and CTA as overlay with contrast
-- If no image: strong typographic composition focused on the offer
 - Maximum clarity — user must understand the offer in 1 second
-- Calibrated for Meta Ads best practices: prominent brand, clear value, strong CTA
 - Professional ad agency quality`
-    },
-    {
-      id: 'valeria_branding',
-      icon: '✨',
-      nombre: 'Generadora de Branding Visual',
-      desc: 'Propuesta visual de identidad de marca: paleta, tipografía y concepto estético.',
-      campos: [
-        { tipo: 'select', nombre: 'industria', label: 'Industria', opciones: ['Marketing / Agencia', 'Moda y ropa', 'Gastronomía', 'Salud y bienestar', 'Tecnología', 'Educación', 'Belleza y cosmética', 'Otro'] },
-        { tipo: 'select', nombre: 'personalidad', label: 'Personalidad de la marca', opciones: ['Sofisticada y premium', 'Cercana y amigable', 'Seria y corporativa', 'Atrevida y disruptiva', 'Minimalista y limpia', 'Natural y orgánica', 'Innovadora y tech', 'Lujosa y exclusiva'] },
-        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista elegante', 'Moderno y dinámico', 'Editorial premium', 'Orgánico y natural', 'Futurista y tech', 'Vintage y artesanal', 'Colorido y alegre'] },
-        { tipo: 'input', nombre: 'referencias', label: 'Marcas de referencia visual', placeholder: 'Ej: Zara, Glossier, Apple, Nike, Loewe...' },
-        { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Proponer nueva paleta', 'Personalizado (especificá abajo)'] },
-        { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizado")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
-      ],
-      esImagen: true,
-      prompt_imagen: `You are Valeria, Senior Brand Designer at HM AI. Generate ONE complete visual brand identity proposal. No text descriptions. No explanations. Only the visual result.
+      },
+      {
+        id: 'valeria_branding',
+        icon: '✨',
+        nombre: 'Generadora de Branding Visual',
+        desc: 'Propuesta visual de identidad de marca: paleta, tipografía y concepto estético.',
+        campos: [
+          { tipo: 'select', nombre: 'industria', label: 'Industria', opciones: ['Marketing / Agencia', 'Moda y ropa', 'Gastronomía', 'Salud y bienestar', 'Tecnología', 'Educación', 'Belleza y cosmética', 'Otro'] },
+          { tipo: 'select', nombre: 'personalidad', label: 'Personalidad de la marca', opciones: ['Sofisticada y premium', 'Cercana y amigable', 'Seria y corporativa', 'Atrevida y disruptiva', 'Minimalista y limpia', 'Natural y orgánica', 'Innovadora y tech', 'Lujosa y exclusiva'] },
+          { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista elegante', 'Moderno y dinámico', 'Editorial premium', 'Orgánico y natural', 'Futurista y tech', 'Vintage y artesanal', 'Colorido y alegre'] },
+          { tipo: 'input', nombre: 'referencias', label: 'Marcas de referencia visual', placeholder: 'Ej: Zara, Glossier, Apple, Nike, Loewe...' },
+          { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Proponer nueva paleta', 'Personalizado (especificá abajo)'] },
+          { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizado")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
+        ],
+        esImagen: true,
+        prompt_imagen: `You are Valeria, Senior Brand Designer at HM AI. Generate ONE complete visual brand identity proposal. No text descriptions. No explanations. Only the visual result.
 
 BRAND CONTEXT:
 - Brand name: {{nombre_marca}}
@@ -2712,339 +2656,250 @@ BRAND CONTEXT:
 - References: {{referencias}}
 - Brand base aesthetic: {{estilo_visual}}
 
-TYPOGRAPHY:
-- Existing typography from brand profile: {{tipografia}}
-- If "No sé" or empty: select a typography pair that matches the personality and style chosen above. Show the chosen fonts as part of the proposal.
+TYPOGRAPHY: {{tipografia}} — if "No sé" or empty, select a font pair that matches the personality and style.
+COLOR CONFIG: {{colores_config}} | Brand colors: {{colores_marca}} | Custom: {{colores_custom}}
+If "Proponer nueva paleta": create a cohesive 4-5 color palette.
 
-COLOR:
-- Config: {{colores_config}}
-- Current brand colors (reference): {{colores_marca}}
-- Custom colors: {{colores_custom}}
-- If "Proponer nueva paleta": create a cohesive 4-5 color palette that matches the personality and style
-
-DELIVERABLE — show all of these in a single visual:
+DELIVERABLE — show all in a single visual:
 - Color palette with hex swatches
-- Typography pairing (heading font + body font, shown as sample text)
-- Visual mood elements (textures, shapes, graphic elements representative of the identity)
-- A sample social media post mockup showing the identity in context
-- Consistent, professional brand studio quality — agency-grade branding proposal`
-    },
-    {
-      id: 'valeria_moodboard',
-      icon: '🌈',
-      nombre: 'Generadora de Moodboards',
-      desc: 'Moodboard profesional de dirección visual para campañas, marcas o proyectos.',
-      campos: [
-        { tipo: 'input', nombre: 'proyecto', label: 'Proyecto o campaña', placeholder: 'Ej: Colección verano 2025 / Relanzamiento de marca' },
-        { tipo: 'select', nombre: 'objetivo', label: 'Para qué lo necesitás', opciones: ['Identidad visual de marca', 'Campaña publicitaria', 'Shooting fotográfico', 'Contenido para redes', 'Rediseño de marca'] },
-        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista', 'Editorial', 'Luxury / Premium', 'Orgánico y natural', 'Futurista', 'Colorido y pop', 'Vintage', 'Urbano'] },
-        { tipo: 'select', nombre: 'emocion', label: 'Emoción principal', opciones: ['Exclusividad', 'Frescura y ligereza', 'Energía y dinamismo', 'Calma y bienestar', 'Lujo y poder', 'Alegría y diversión', 'Nostalgia', 'Misterio'] },
-        { tipo: 'input', nombre: 'referencias', label: 'Referencias o elementos que querés ver', placeholder: 'Ej: colores tierra, flores secas, arquitectura japonesa, fotografía editorial...' },
-        { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Libre según el estilo elegido', 'Personalizados (especificá abajo)'] },
-        { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
-      ],
-      esImagen: true,
-      prompt_imagen: `You are Valeria, Art Director and Visual Curator at HM AI. Generate ONE professional creative moodboard. No text descriptions. No labels. No explanations. Only the visual moodboard.
+- Typography pairing (heading + body font shown as sample text)
+- Visual mood elements (textures, shapes, graphic elements)
+- A sample social media post mockup
+- Professional brand studio quality`
+      },
+      {
+        id: 'valeria_moodboard',
+        icon: '🌈',
+        nombre: 'Generadora de Moodboards',
+        desc: 'Moodboard profesional de dirección visual para campañas, marcas o proyectos.',
+        campos: [
+          { tipo: 'input', nombre: 'proyecto', label: 'Proyecto o campaña', placeholder: 'Ej: Colección verano 2025 / Relanzamiento de marca' },
+          { tipo: 'select', nombre: 'objetivo', label: 'Para qué lo necesitás', opciones: ['Identidad visual de marca', 'Campaña publicitaria', 'Shooting fotográfico', 'Contenido para redes', 'Rediseño de marca'] },
+          { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista', 'Editorial', 'Luxury / Premium', 'Orgánico y natural', 'Futurista', 'Colorido y pop', 'Vintage', 'Urbano'] },
+          { tipo: 'select', nombre: 'emocion', label: 'Emoción principal', opciones: ['Exclusividad', 'Frescura y ligereza', 'Energía y dinamismo', 'Calma y bienestar', 'Lujo y poder', 'Alegría y diversión', 'Nostalgia', 'Misterio'] },
+          { tipo: 'input', nombre: 'referencias', label: 'Referencias o elementos que querés ver', placeholder: 'Ej: colores tierra, flores secas, arquitectura japonesa...' },
+          { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Libre según el estilo elegido', 'Personalizados (especificá abajo)'] },
+          { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
+        ],
+        esImagen: true,
+        prompt_imagen: `You are Valeria, Art Director and Visual Curator at HM AI. Generate ONE professional creative moodboard. No text descriptions. No labels. No explanations. Only the visual moodboard.
 
-PROJECT: {{proyecto}}
-PURPOSE: {{objetivo}}
-VISUAL STYLE: {{estilo}}
-MAIN EMOTION: {{emocion}}
-REFERENCES: {{referencias}}
-
-BRAND:
-- Name: {{nombre_marca}}
-- Current colors (reference): {{colores_marca}}
-- Color config: {{colores_config}}
-- Custom colors: {{colores_custom}}
-- Brand aesthetic: {{estilo_visual}}
+PROJECT: {{proyecto}} | PURPOSE: {{objetivo}} | VISUAL STYLE: {{estilo}} | MAIN EMOTION: {{emocion}} | REFERENCES: {{referencias}}
+BRAND: {{nombre_marca}} | Colors: {{colores_marca}} | Color config: {{colores_config}} | Custom: {{colores_custom}} | Aesthetic: {{estilo_visual}}
 
 MOODBOARD RULES:
 - Collage or grid of complementary visual references — NO text overlays, NO labels
-- Show: color palette chips, texture and material samples, photographic style references, lighting mood, graphic element style
+- Show: color palette chips, texture/material samples, photographic style references, lighting mood, graphic element style
 - Every visual element must reinforce the same emotional universe
-- Colors must flow cohesively across the entire composition
-- Professional creative direction quality — looks like a top design agency deliverable
-- One single image containing the complete moodboard`
-    },
-  ]
-},
-
-// ============================================================
-// MATÍAS — FOTOGRAFÍA DE PRODUCTO IA (ACTUALIZADO)
-// ============================================================
-matias: {
-  nombre: 'Matías',
-  rol: 'Fotografía de Producto IA',
-  avatar: 'https://cdn.shopify.com/s/files/1/0800/6955/8502/files/Matias.png?v=1781476124',
-  color: 'linear-gradient(135deg,#0369a1,#0891b2)',
-  desc: 'Fotógrafo IA de productos. Insertá tu producto en cualquier escenario de forma realista y profesional.',
-  esVisual: true,
-  tutorial: {
-    titulo: '¿Cómo lograr mejores resultados con Matías?',
-    pasos: [
-      { icon: '📏', titulo: 'Describí bien tu producto', desc: 'El campo "Descripción del producto" es clave. Incluí: qué es, su tamaño real y su material. Ej: "anillo de plata, 2cm de diámetro, delicado". Esto le dice a la IA cuánto espacio debe ocupar en el escenario.' },
-      { icon: '📸', titulo: 'Usá buenas fotos de entrada', desc: 'La imagen de tu producto debe tener buena iluminación y el producto bien visible. La imagen de referencia (escenario) debe tener el mismo ángulo o perspectiva que querés en el resultado final.' },
-      { icon: '🎯', titulo: 'Elegí escenarios compatibles', desc: 'Para objetos pequeños (anillos, pendientes, cremas): elegí escenas de mesa, superficies o detalles. Para ropa o calzado: personas o maniquíes. El tamaño del producto debe tener sentido con el escenario.' },
-      { icon: '♻️', titulo: 'Si el resultado no convence, refiná', desc: 'Probá cambiar la descripción del producto, ser más específico en el tamaño, o elegir otro escenario. La IA mejora mucho con más contexto.' },
+- Professional creative direction quality — top design agency deliverable`
+      },
     ]
   },
-  herramientas: [
-    {
-      id: 'matias_escenarios',
-      icon: '📸',
-      nombre: 'Fotógrafo de Producto IA',
-      desc: 'Subí el escenario + tu producto y la IA los une con escala y física realistas.',
-      campos: [
-        { tipo: 'input', nombre: 'tipo_producto', label: '¿Qué tipo de producto es?', placeholder: 'Ej: anillo, frasco de crema, zapatilla, remera, perfume...' },
-        { tipo: 'input', nombre: 'tamano_real', label: 'Tamaño real del producto', placeholder: 'Ej: 2cm de diámetro / tamaño de un puño / 15cm de alto / pequeño/mediano/grande' },
-        { tipo: 'input', nombre: 'material_producto', label: 'Material y acabado del producto', placeholder: 'Ej: plata pulida, vidrio transparente, cuero marrón, tela de algodón blanca...' },
-        { tipo: 'input', nombre: 'descripcion_producto', label: 'Descripción visual completa del producto', placeholder: 'Ej: anillo de plata con piedra verde esmeralda, banda fina, delicado y minimalista' },
-        { tipo: 'select', nombre: 'posicion', label: '¿Cómo querés que quede posicionado?', opciones: ['Apoyado sobre la superficie', 'En mano o muñeca', 'Colgado o suspendido', 'Dentro del escenario naturalmente', 'En primer plano destacado'] },
-        { tipo: 'select', nombre: 'estilo_foto', label: 'Estilo fotográfico', opciones: ['Editorial premium', 'Lifestyle natural', 'Estudio minimalista', 'E-commerce limpio', 'Publicitario impactante'] },
-      ],
-      esImagen: true,
-      requiereImagenProducto: true,
-      requiereImagenReferencia: true,
-      prompt_imagen: `Professional product photography composite. CRITICAL: maintain absolute scale realism.
 
-PRODUCT DETAILS (use these to determine exact size in the scene):
-- Product type: {{tipo_producto}}
-- Real-world size: {{tamano_real}}
-- Material and finish: {{material_producto}}
-- Visual description: {{descripcion_producto}}
-- Positioning: {{posicion}}
+  // ============================================================
+  // MATÍAS — FOTOGRAFÍA DE PRODUCTO IA
+  // ============================================================
+  matias: {
+    nombre: 'Matías',
+    rol: 'Fotografía de Producto IA',
+    avatar: 'https://cdn.shopify.com/s/files/1/0800/6955/8502/files/Matias.png?v=1781476124',
+    color: 'linear-gradient(135deg,#0369a1,#0891b2)',
+    desc: 'Fotógrafo IA de productos. Insertá tu producto en cualquier escenario de forma realista y profesional.',
+    esVisual: true,
+    tutorial: {
+      titulo: '¿Cómo lograr mejores resultados con Matías?',
+      pasos: [
+        { icon: '📏', titulo: 'Describí bien tu producto', desc: 'El campo "Descripción del producto" es clave. Incluí: qué es, su tamaño real y su material. Ej: "anillo de plata, 2cm de diámetro, delicado". Esto le dice a la IA cuánto espacio debe ocupar en el escenario.' },
+        { icon: '📸', titulo: 'Usá buenas fotos de entrada', desc: 'La imagen de tu producto debe tener buena iluminación y el producto bien visible. La imagen de referencia (escenario) debe tener el mismo ángulo o perspectiva que querés en el resultado final.' },
+        { icon: '🎯', titulo: 'Elegí escenarios compatibles', desc: 'Para objetos pequeños (anillos, pendientes, cremas): elegí escenas de mesa, superficies o detalles. Para ropa o calzado: personas o maniquíes. El tamaño del producto debe tener sentido con el escenario.' },
+        { icon: '♻️', titulo: 'Si el resultado no convence, refiná', desc: 'Probá cambiar la descripción del producto, ser más específico en el tamaño, o elegir otro escenario. La IA mejora mucho con más contexto.' },
+      ]
+    },
+    herramientas: [
+      {
+        id: 'matias_escenarios',
+        icon: '📸',
+        nombre: 'Fotógrafo de Producto IA',
+        desc: 'Subí el escenario + tu producto y la IA los une con escala y física realistas.',
+        campos: [
+          { tipo: 'input', nombre: 'tipo_producto', label: '¿Qué tipo de producto es?', placeholder: 'Ej: anillo, frasco de crema, zapatilla, remera, perfume...' },
+          { tipo: 'input', nombre: 'tamano_real', label: 'Tamaño real del producto', placeholder: 'Ej: 2cm de diámetro / tamaño de un puño / 15cm de alto / pequeño/mediano/grande' },
+          { tipo: 'input', nombre: 'material_producto', label: 'Material y acabado del producto', placeholder: 'Ej: plata pulida, vidrio transparente, cuero marrón, tela de algodón blanca...' },
+          { tipo: 'input', nombre: 'descripcion_producto', label: 'Descripción visual completa del producto', placeholder: 'Ej: anillo de plata con piedra verde esmeralda, banda fina, delicado y minimalista' },
+          { tipo: 'select', nombre: 'posicion', label: '¿Cómo querés que quede posicionado?', opciones: ['Apoyado sobre la superficie', 'En mano o muñeca', 'Colgado o suspendido', 'Dentro del escenario naturalmente', 'En primer plano destacado'] },
+          { tipo: 'select', nombre: 'estilo_foto', label: 'Estilo fotográfico', opciones: ['Editorial premium', 'Lifestyle natural', 'Estudio minimalista', 'E-commerce limpio', 'Publicitario impactante'] },
+        ],
+        esImagen: true,
+        requiereImagenProducto: true,
+        requiereImagenReferencia: true,
+        prompt_imagen: `Professional product photography composite. CRITICAL: maintain absolute scale realism.
 
+PRODUCT: type={{tipo_producto}} | real size={{tamano_real}} | material={{material_producto}} | description={{descripcion_producto}} | positioning={{posicion}}
 PHOTOGRAPHY STYLE: {{estilo_foto}}
 
 SCALE AND PHYSICS RULES (most important):
-- The product MUST appear at its correct real-world scale relative to the environment in the reference image. A ring should look ring-sized (tiny), a perfume bottle should look bottle-sized, a sneaker should look shoe-sized.
-- If the product is small (jewelry, small accessories): it must appear SMALL in the scene — do not enlarge it to fill the frame
-- The product must physically interact with surfaces correctly: if on a table, it must rest ON the surface with realistic shadow and contact point, not float above it
-- Gravity and surface contact must be convincing — soft surfaces (fabric, cushion) should show slight product weight/indentation if appropriate
-- Material properties must be preserved: metal should reflect, glass should refract, fabric should drape
+- Product MUST appear at its correct real-world scale. A ring should be tiny, a perfume bottle should look bottle-sized.
+- Small products must appear SMALL — do not enlarge to fill the frame
+- Product must physically rest ON surfaces with realistic shadow and contact point, not float
+- Soft surfaces show product weight/indentation; hard surfaces show sharp shadow
 
-PRODUCT PRESERVATION RULES:
+PRODUCT PRESERVATION:
 - Keep EXACT colors, logos, labels, engravings and details from the product image
-- Do not alter proportions, shape or design elements
 - Match lighting direction from reference scene to product
 
-FINAL QUALITY:
-- Advertising photography quality
-- Seamless integration — product must look like it was photographed in that exact scene`
-    },
-    {
-      id: 'matias_mockup',
-      icon: '🖼️',
-      nombre: 'Generador de Mockups',
-      desc: 'Ponés tu producto en un escenario. Especificá el tamaño para resultados realistas.',
-      campos: [
-        { tipo: 'input', nombre: 'tipo_producto', label: '¿Qué tipo de producto es?', placeholder: 'Ej: remera, taza, cuadro, bolso, pendiente...' },
-        { tipo: 'input', nombre: 'tamano_real', label: 'Tamaño real del producto', placeholder: 'Ej: talla M / 30cm de alto / del tamaño de una palma / pequeño...' },
-        { tipo: 'input', nombre: 'material_producto', label: 'Material', placeholder: 'Ej: algodón blanco, cerámica beige, madera clara, cuero negro...' },
-        { tipo: 'input', nombre: 'descripcion_producto', label: 'Descripción visual del producto', placeholder: 'Ej: remera oversize blanca con print minimalista en el pecho' },
-        { tipo: 'input', nombre: 'escenario', label: 'Escenario deseado', placeholder: 'Ej: mesa de madera clara con luz natural lateral y plantas de fondo' },
-        { tipo: 'select', nombre: 'estilo', label: 'Estilo del mockup', opciones: ['Minimalista / Clean', 'Natural / Orgánico', 'Estudio oscuro premium', 'Lifestyle urbano', 'Editorial moda'] },
-      ],
-      esImagen: true,
-      requiereImagen: true,
-      prompt_imagen: `Create a professional product mockup with absolute scale and physics realism.
+QUALITY: advertising photography quality, seamless integration`
+      },
+      {
+        id: 'matias_mockup',
+        icon: '🖼️',
+        nombre: 'Generador de Mockups',
+        desc: 'Ponés tu producto en un escenario. Especificá el tamaño para resultados realistas.',
+        campos: [
+          { tipo: 'input', nombre: 'tipo_producto', label: '¿Qué tipo de producto es?', placeholder: 'Ej: remera, taza, cuadro, bolso, pendiente...' },
+          { tipo: 'input', nombre: 'tamano_real', label: 'Tamaño real del producto', placeholder: 'Ej: talla M / 30cm de alto / del tamaño de una palma / pequeño...' },
+          { tipo: 'input', nombre: 'material_producto', label: 'Material', placeholder: 'Ej: algodón blanco, cerámica beige, madera clara, cuero negro...' },
+          { tipo: 'input', nombre: 'descripcion_producto', label: 'Descripción visual del producto', placeholder: 'Ej: remera oversize blanca con print minimalista en el pecho' },
+          { tipo: 'input', nombre: 'escenario', label: 'Escenario deseado', placeholder: 'Ej: mesa de madera clara con luz natural lateral y plantas de fondo' },
+          { tipo: 'select', nombre: 'estilo', label: 'Estilo del mockup', opciones: ['Minimalista / Clean', 'Natural / Orgánico', 'Estudio oscuro premium', 'Lifestyle urbano', 'Editorial moda'] },
+        ],
+        esImagen: true,
+        requiereImagen: true,
+        prompt_imagen: `Professional product mockup with absolute scale and physics realism.
 
-PRODUCT:
-- Type: {{tipo_producto}}
-- Real size: {{tamano_real}}
-- Material: {{material_producto}}
-- Description: {{descripcion_producto}}
+PRODUCT: type={{tipo_producto}} | real size={{tamano_real}} | material={{material_producto}} | description={{descripcion_producto}}
+SCENE: {{escenario}} | STYLE: {{estilo}}
 
-SCENE: {{escenario}}
-STYLE: {{estilo}}
+SCALE RULES: Product must appear at its EXACT real-world size. Do NOT scale up to fill the frame.
+PHYSICS RULES: Product rests ON surfaces naturally with correct shadow. Soft surfaces show weight impression. No floating.
+PRODUCT PRESERVATION: Keep exact colors, patterns, logos and proportions from uploaded image.
+QUALITY: professional advertising photography, e-commerce or social media ready`
+      },
+      {
+        id: 'matias_cambio_fondo',
+        icon: '🎭',
+        nombre: 'Cambio de Fondo',
+        desc: 'Reemplazá el fondo manteniendo el producto intacto con escala y física correctas.',
+        campos: [
+          { tipo: 'input', nombre: 'tipo_producto', label: '¿Qué producto es?', placeholder: 'Ej: frasco de perfume, collar, bolso, zapatilla...' },
+          { tipo: 'input', nombre: 'tamano_real', label: 'Tamaño real del producto', placeholder: 'Ej: 10cm de alto / pequeño / tamaño de un puño...' },
+          { tipo: 'input', nombre: 'nuevo_fondo', label: 'Describí el nuevo fondo', placeholder: 'Ej: mármol blanco con luz natural suave / fondo negro liso de estudio' },
+          { tipo: 'select', nombre: 'estilo', label: 'Estilo del nuevo fondo', opciones: ['Estudio blanco limpio', 'Estudio negro premium', 'Mármol / piedra elegante', 'Natural con plantas', 'Color sólido flat', 'Lifestyle con ambiente'] },
+        ],
+        esImagen: true,
+        requiereImagen: true,
+        prompt_imagen: `Replace ONLY the background of this product image. Keep the product 100% intact.
 
-SCALE RULES:
-- The product must appear at its EXACT real-world size. A mug should look mug-sized next to a table. A ring should be tiny. A t-shirt should be clothing-sized.
-- Do NOT scale the product up to fill the frame — keep it proportionally correct within the scene
+Product: {{tipo_producto}} | Real size: {{tamano_real}} | New background: {{nuevo_fondo}} | Style: {{estilo}}
 
-PHYSICS RULES:
-- Product must rest ON surfaces naturally with correct contact point and shadow
-- Soft surfaces (fabric, cushion) must show natural weight impression where product sits
-- Hard surfaces (marble, wood): sharp clean shadow under the product
-- No floating products — gravity must be evident
+RULES: Remove existing background and replace with new one. Keep ORIGINAL PRODUCT exactly as-is: same position, size, colors, details. Correct physics: shadow must match new light source, surface contact must be realistic. No halos or artifacts. Edge cutting must be pixel-perfect.
+QUALITY: seamless background replacement, professional retouching, e-commerce ready`
+      },
+      {
+        id: 'matias_escenarios_comerciales',
+        icon: '🏆',
+        nombre: 'Generador de Escenarios Comerciales',
+        desc: 'Tu producto en escenas de marca potentes. Especificá qué es para que la escala sea real.',
+        campos: [
+          { tipo: 'input', nombre: 'tipo_producto', label: '¿Qué tipo de producto es?', placeholder: 'Ej: perfume, taza, joya, calzado, cosmético...' },
+          { tipo: 'input', nombre: 'tamano_real', label: 'Tamaño real del producto', placeholder: 'Ej: 15cm de alto / tamaño palma de la mano / objeto pequeño...' },
+          { tipo: 'input', nombre: 'descripcion_producto', label: 'Descripción del producto', placeholder: 'Ej: perfume de lujo en frasco de vidrio tallado con tapa dorada' },
+          { tipo: 'select', nombre: 'escenario', label: 'Tipo de escenario', opciones: ['Lujo y elegancia (mármol, seda, velas)', 'Natural y orgánico (madera, plantas, lino)', 'Minimalista premium (blanco, formas limpias)', 'Lifestyle urbano (café, ciudad, moderno)', 'Playa y verano (arena, conchas, luz dorada)', 'Festividades (guirnaldas, invierno, cálido)'] },
+          { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Editorial de revista', 'Publicitario de marca', 'E-commerce premium', 'Lifestyle aspiracional'] },
+        ],
+        esImagen: true,
+        requiereImagen: true,
+        prompt_imagen: `Professional commercial scene for product photography.
 
-PRODUCT PRESERVATION:
-- Keep exact colors, patterns, logos and proportions from uploaded image
-- Maintain material properties (fabric texture, ceramic finish, metal shine)
-- Match scene lighting to product for seamless integration
+PRODUCT: type={{tipo_producto}} | real size={{tamano_real}} | description={{descripcion_producto}}
+SCENE: {{escenario}} | STYLE: {{estilo}}
 
-QUALITY: professional advertising photography, publishable for e-commerce or social media`
-    },
-    {
-      id: 'matias_cambio_fondo',
-      icon: '🎭',
-      nombre: 'Cambio de Fondo',
-      desc: 'Reemplazá el fondo manteniendo el producto intacto con escala y física correctas.',
-      campos: [
-        { tipo: 'input', nombre: 'tipo_producto', label: '¿Qué producto es?', placeholder: 'Ej: frasco de perfume, collar, bolso, zapatilla...' },
-        { tipo: 'input', nombre: 'tamano_real', label: 'Tamaño real del producto', placeholder: 'Ej: 10cm de alto / pequeño / tamaño de un puño...' },
-        { tipo: 'input', nombre: 'nuevo_fondo', label: 'Describí el nuevo fondo', placeholder: 'Ej: mármol blanco con luz natural suave / fondo negro liso de estudio / madera con plantas' },
-        { tipo: 'select', nombre: 'estilo', label: 'Estilo del nuevo fondo', opciones: ['Estudio blanco limpio', 'Estudio negro premium', 'Mármol / piedra elegante', 'Natural con plantas', 'Color sólido flat', 'Lifestyle con ambiente'] },
-      ],
-      esImagen: true,
-      requiereImagen: true,
-      prompt_imagen: `Replace ONLY the background of this product image. Keep the product 100% intact.
-
-Product context: {{tipo_producto}}, real size: {{tamano_real}}
-New background: {{nuevo_fondo}}
-Style: {{estilo}}
-
-BACKGROUND REPLACEMENT RULES:
-- Remove existing background completely and replace with the new one
-- Keep the ORIGINAL PRODUCT exactly as-is: same position, size, colors, details, proportions
-- The product must sit on/in the new background with correct physics: shadow must match new light source direction, surface contact must be realistic
-- If product is small (jewelry, small accessories), it must remain small in the new background — do not recompose or rescale
-- Edge cutting must be pixel-perfect — no halos, no artifacts, no bleed from original background
-- New background lighting must wrap around the product naturally
-
-QUALITY: seamless background replacement, professional retouching quality, e-commerce ready`
-    },
-    {
-      id: 'matias_escenarios_comerciales',
-      icon: '🏆',
-      nombre: 'Generador de Escenarios Comerciales',
-      desc: 'Tu producto en escenas de marca potentes. Especificá qué es para que la escala sea real.',
-      campos: [
-        { tipo: 'input', nombre: 'tipo_producto', label: '¿Qué tipo de producto es?', placeholder: 'Ej: perfume, taza, joya, calzado, cosmético...' },
-        { tipo: 'input', nombre: 'tamano_real', label: 'Tamaño real del producto', placeholder: 'Ej: 15cm de alto / tamaño palma de la mano / objeto pequeño...' },
-        { tipo: 'input', nombre: 'descripcion_producto', label: 'Descripción del producto', placeholder: 'Ej: perfume de lujo en frasco de vidrio tallado con tapa dorada' },
-        { tipo: 'select', nombre: 'escenario', label: 'Tipo de escenario', opciones: ['Lujo y elegancia (mármol, seda, velas)', 'Natural y orgánico (madera, plantas, lino)', 'Minimalista premium (blanco, formas limpias)', 'Lifestyle urbano (café, ciudad, moderno)', 'Playa y verano (arena, conchas, luz dorada)', 'Festividades (guirnaldas, invierno, cálido)'] },
-        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Editorial de revista', 'Publicitario de marca', 'E-commerce premium', 'Lifestyle aspiracional'] },
-      ],
-      esImagen: true,
-      requiereImagen: true,
-      prompt_imagen: `Create a professional commercial scene for product photography.
-
-PRODUCT:
-- Type: {{tipo_producto}}
-- Real size: {{tamano_real}}
-- Description: {{descripcion_producto}}
-
-SCENE: {{escenario}}
-STYLE: {{estilo}}
-
-CRITICAL — SCALE AND INTEGRATION:
-- The product is the HERO but must appear at its CORRECT REAL-WORLD SIZE within the scene
-- Build the scene AROUND the product at its actual scale — do not grow the product to fill the frame
-- Small products (jewelry, cosmetics): they appear small but beautifully lit and sharply focused as the focal point
-- Large products (bags, shoes): they should dominate the scene proportionally
-- Physical integration: correct shadows, reflections, and surface interaction
-
-PRODUCT PRESERVATION:
-- Maintain exact product appearance from the uploaded image
-- Only enhance lighting and environment around it
-
+CRITICAL: Product is the HERO but must appear at its CORRECT REAL-WORLD SIZE. Build scene AROUND the product at actual scale. Small products appear small but beautifully lit as the focal point.
+PRODUCT PRESERVATION: Maintain exact product appearance from uploaded image.
 QUALITY: magazine editorial or high-end brand campaign quality`
-    },
-    {
-      id: 'matias_eliminador_fondo',
-      icon: '✂️',
-      nombre: 'Eliminador de Fondo',
-      desc: 'Eliminá el fondo con máxima precisión para usar el producto en cualquier diseño.',
-      campos: [
-        { tipo: 'input', nombre: 'tipo_producto', label: 'Tipo de producto', placeholder: 'Ej: frasco de crema, zapatillas, collar de plata, bolso...' },
-        { tipo: 'input', nombre: 'detalle_especial', label: 'Detalles delicados a preservar (opcional)', placeholder: 'Ej: cadena fina, logo bordado, hebillas metálicas, tiras delgadas...' },
-      ],
-      esImagen: true,
-      requiereImagen: true,
-      prompt_imagen: `Remove the background from this product image with maximum precision.
+      },
+      {
+        id: 'matias_eliminador_fondo',
+        icon: '✂️',
+        nombre: 'Eliminador de Fondo',
+        desc: 'Eliminá el fondo con máxima precisión para usar el producto en cualquier diseño.',
+        campos: [
+          { tipo: 'input', nombre: 'tipo_producto', label: 'Tipo de producto', placeholder: 'Ej: frasco de crema, zapatillas, collar de plata, bolso...' },
+          { tipo: 'input', nombre: 'detalle_especial', label: 'Detalles delicados a preservar (opcional)', placeholder: 'Ej: cadena fina, logo bordado, hebillas metálicas, tiras delgadas...' },
+        ],
+        esImagen: true,
+        requiereImagen: true,
+        prompt_imagen: `Remove the background from this product image with maximum precision.
 
-Product: {{tipo_producto}}
-Delicate details to preserve: {{detalle_especial}}
+Product: {{tipo_producto}} | Delicate details to preserve: {{detalle_especial}}
 
-CUTOUT RULES:
-- Remove ALL background pixels — deliver clean product isolation
-- Preserve every detail of the product: fine chains, thin straps, logo details, engravings, hair-thin elements
-- Maintain original product colors, textures and finish exactly
-- No halos, no color fringing, no background bleed at edges
-- Sharp, clean edge where product ends
-- Keep any cast shadow if it adds realism for product presentation
-- Result must be ready for placement on any new background or design
-
+CUTOUT RULES: Remove ALL background pixels. Preserve every product detail: fine chains, thin straps, logo details, hair-thin elements. Maintain original colors, textures and finish. No halos, no color fringing, no background bleed. Sharp clean edge.
 QUALITY: professional retouching / clipping path quality, e-commerce and print ready`
-    },
-    {
-      id: 'matias_mejorador',
-      icon: '⬆️',
-      nombre: 'Mejorador de Imagen de Producto',
-      desc: 'Mejorá calidad, iluminación y nitidez de tu foto de producto existente.',
-      campos: [
-        { tipo: 'input', nombre: 'tipo_producto', label: 'Tipo de producto', placeholder: 'Ej: joya, ropa, cosmético, calzado...' },
-        { tipo: 'select', nombre: 'objetivo', label: 'Qué querés mejorar principalmente', opciones: ['Nitidez y detalle', 'Iluminación y contraste', 'Corrección de color', 'Calidad general / upscale', 'Aspecto más profesional / menos casero', 'Restauración de foto deteriorada'] },
-        { tipo: 'input', nombre: 'problema_actual', label: 'Problema principal de la foto actual', placeholder: 'Ej: luz de fondo muy fuerte, producto se ve opaco, está pixelada, fondo casero...' },
-      ],
-      esImagen: true,
-      requiereImagen: true,
-      prompt_imagen: `Enhance this product photograph professionally.
+      },
+      {
+        id: 'matias_mejorador',
+        icon: '⬆️',
+        nombre: 'Mejorador de Imagen de Producto',
+        desc: 'Mejorá calidad, iluminación y nitidez de tu foto de producto existente.',
+        campos: [
+          { tipo: 'input', nombre: 'tipo_producto', label: 'Tipo de producto', placeholder: 'Ej: joya, ropa, cosmético, calzado...' },
+          { tipo: 'select', nombre: 'objetivo', label: 'Qué querés mejorar principalmente', opciones: ['Nitidez y detalle', 'Iluminación y contraste', 'Corrección de color', 'Calidad general / upscale', 'Aspecto más profesional / menos casero', 'Restauración de foto deteriorada'] },
+          { tipo: 'input', nombre: 'problema_actual', label: 'Problema principal de la foto actual', placeholder: 'Ej: luz de fondo muy fuerte, producto se ve opaco, está pixelada...' },
+        ],
+        esImagen: true,
+        requiereImagen: true,
+        prompt_imagen: `Enhance this product photograph professionally.
 
-Product type: {{tipo_producto}}
-Primary improvement goal: {{objetivo}}
-Current problem: {{problema_actual}}
+Product: {{tipo_producto}} | Goal: {{objetivo}} | Current problem: {{problema_actual}}
 
-ENHANCEMENT RULES:
-- Maintain the EXACT product — same colors, proportions, details, logos, textures
-- Do NOT alter or recompose the scene — only enhance quality parameters
-- Improvement focus: {{objetivo}}
-- Increase perceived quality to match professional product photography standards
-- If correcting color: use natural, true-to-product colors — avoid over-saturating
-- If improving lighting: maintain product's material properties (matte stays matte, metal stays metallic)
-- Final result must look like it was shot by a professional product photographer
-
+RULES: Maintain EXACT product — same colors, proportions, details, logos, textures. Do NOT alter or recompose the scene — only enhance quality. Use natural true-to-product colors. Maintain material properties. Final result must look like shot by a professional product photographer.
 QUALITY: e-commerce and advertising ready, no artificial or over-processed look`
-    },
- // ── NUEVA HERRAMIENTA: ANALIZADOR DE TUTORIALES ──────────────
-    {
-      id: 'matias_analizador_tutorial',
-      icon: '🔍',
-      nombre: 'Analizador de Tutoriales',
-      desc: 'Pegá el HTML de cualquier reel o tutorial y la IA te da el paso a paso para replicarlo con tu marca.',
-      campos: [
-        {
-          tipo: 'textarea',
-          nombre: 'html_tutorial',
-          label: '📋 Pegá el código HTML del tutorial aquí',
-          placeholder: 'Pegá todo el código aquí...',
-          rows: 6,
-          ayuda: '<strong>¿Cómo obtenerlo?</strong>\n1. Abrí el reel en Instagram, TikTok o YouTube\n2. Click derecho en la página → <strong>Inspeccionar</strong> (o F12)\n3. Seleccioná todo con Ctrl+A (o Cmd+A en Mac) y copiá\n4. Pegá aquí\n\n💡 <strong>También funciona</strong> si pegás la descripción o transcripción del video directamente.'
-        },
-        {
-          tipo: 'select',
-          nombre: 'tipo_contenido',
-          label: '¿Qué tipo de contenido es el tutorial?',
-          opciones: [
-            'Reel / TikTok con transiciones',
-            'Tutorial de fotografía de producto',
-            'Tutorial de video / edición',
-            'Tutorial de contenido lifestyle',
-            'Tutorial de moda / outfit',
-            'Tutorial de gastronomía / receta visual',
-            'Otro'
-          ]
-        },
-        {
-          tipo: 'select',
-          nombre: 'nivel_detalle',
-          label: '¿Qué tan detallado necesitás el paso a paso?',
-          opciones: [
-            'Resumen ejecutivo (10 pasos clave)',
-            'Detallado (cada movimiento y transición)',
-            'Ultra detallado (incluye tiempos, ángulos y configuración de cámara)'
-          ]
-        },
-        {
-          tipo: 'input',
-          nombre: 'contexto_extra',
-          label: '¿Qué producto o escena querés aplicar? (opcional)',
-          placeholder: 'Ej: anillo de plata sobre mesa de mármol / remera oversize en exterior'
-        },
-      ],
-     prompt: `Sos Matías, Director de Fotografía y Producción de HM AI. Tu trabajo es analizar el contenido de un tutorial de redes sociales y convertirlo en un plan de producción paso a paso, adaptado a la marca del usuario.
+      },
+      {
+        id: 'matias_analizador_tutorial',
+        icon: '🔍',
+        nombre: 'Analizador de Tutoriales',
+        desc: 'Pegá el HTML de cualquier reel o tutorial y la IA te da el paso a paso para replicarlo con tu marca.',
+        campos: [
+          {
+            tipo: 'textarea',
+            nombre: 'html_tutorial',
+            label: '📋 Pegá el código HTML del tutorial aquí',
+            placeholder: 'Pegá todo el código aquí...',
+            rows: 6,
+            ayuda: '<strong>¿Cómo obtenerlo?</strong>\n1. Abrí el reel en Instagram, TikTok o YouTube\n2. Click derecho en la página → <strong>Inspeccionar</strong> (o F12)\n3. Seleccioná todo con Ctrl+A (o Cmd+A en Mac) y copiá\n4. Pegá aquí\n\n💡 <strong>También funciona</strong> si pegás la descripción o transcripción del video directamente.'
+          },
+          {
+            tipo: 'select',
+            nombre: 'tipo_contenido',
+            label: '¿Qué tipo de contenido es el tutorial?',
+            opciones: [
+              'Reel / TikTok con transiciones',
+              'Tutorial de fotografía de producto',
+              'Tutorial de video / edición',
+              'Tutorial de contenido lifestyle',
+              'Tutorial de moda / outfit',
+              'Tutorial de gastronomía / receta visual',
+              'Otro'
+            ]
+          },
+          {
+            tipo: 'select',
+            nombre: 'nivel_detalle',
+            label: '¿Qué tan detallado necesitás el paso a paso?',
+            opciones: [
+              'Resumen ejecutivo (10 pasos clave)',
+              'Detallado (cada movimiento y transición)',
+              'Ultra detallado (incluye tiempos, ángulos y configuración de cámara)'
+            ]
+          },
+          {
+            tipo: 'input',
+            nombre: 'contexto_extra',
+            label: '¿Qué producto o escena querés aplicar? (opcional)',
+            placeholder: 'Ej: anillo de plata sobre mesa de mármol / remera oversize en exterior'
+          },
+        ],
+        prompt: `Sos Matías, Director de Fotografía y Producción de HM AI. Tu trabajo es analizar el contenido de un tutorial de redes sociales y convertirlo en un plan de producción paso a paso, adaptado a la marca del usuario.
 
 PERFIL DE MARCA:
 {{perfil_marca}}
@@ -3073,10 +2928,7 @@ Descripción en 2-3 líneas de qué se hace en el video y qué resultado logra.
 Para qué sirve este tipo de contenido (engagement, ventas, viralización, autoridad).
 
 **📋 PASO A PASO PARA REPLICARLO**
-Numerado, claro, ejecutable. Cada paso debe decir:
-- Qué hacer exactamente
-- Cómo hacerlo con el producto/marca del usuario
-- Duración aproximada del clip si aplica
+Numerado, claro, ejecutable. Cada paso: qué hacer / cómo hacerlo con el producto de la marca / duración aproximada si aplica.
 
 **📸 CONFIGURACIÓN DE CÁMARA RECOMENDADA**
 Ángulo, distancia, orientación (vertical/horizontal), tipo de plano.
@@ -3085,13 +2937,13 @@ Numerado, claro, ejecutable. Cada paso debe decir:
 Qué tipo de luz usar, dónde ubicarla, qué evitar.
 
 **✂️ EDICIÓN Y TRANSICIONES**
-Listado de cada transición o efecto de edición que se ve, en orden, con cómo ejecutarlo.
+Listado de cada transición o efecto, en orden, con cómo ejecutarlo.
 
 **🎵 MÚSICA / AUDIO**
 Tipo de música recomendada, ritmo, cómo acompañar los cortes.
 
 **🏷️ ADAPTACIÓN A TU MARCA**
-Cómo personalizar específicamente para {{nombre_marca}}: colores, estilo, producto, escenario recomendado.
+Cómo personalizar para {{nombre_marca}}: colores, estilo, producto, escenario recomendado.
 
 **⚠️ ERRORES COMUNES AL REPLICAR ESTE TUTORIAL**
 Los 3 errores más frecuentes y cómo evitarlos.
@@ -3099,21 +2951,21 @@ Los 3 errores más frecuentes y cómo evitarlos.
 **✅ CHECKLIST DE PRODUCCIÓN**
 Lista de verificación para tener todo listo antes de grabar.
 
-Respondé siempre en español. Sé concreto y directo — este paso a paso lo va a leer alguien durante una producción de fotos/video, necesita entenderse de un vistazo.`
-    },
-    {
-      id: 'matias_director_produccion',
-      icon: '🎬',
-      nombre: 'Director de Producción',
-      desc: 'Plan de tomas, storyboard y dirección visual para tu producción de contenido.',
-      campos: [
-        { tipo: 'input', nombre: 'producto', label: 'Producto o marca', placeholder: 'Ej: nueva línea de skincare / colección de bolsos...' },
-        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo de la producción', opciones: ['Reel para Instagram', 'TikTok viral', 'Ad para Meta Ads', 'Fotos para e-commerce', 'Campaña de lanzamiento', 'Contenido evergreen'] },
-        { tipo: 'select', nombre: 'duracion', label: 'Duración estimada (si es video)', opciones: ['15 segundos', '30 segundos', '60 segundos', '2-3 minutos', 'Solo fotos (sin video)'] },
-        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Editorial premium', 'Lifestyle natural', 'Minimalista y limpio', 'Dinámico y rápido', 'Cinematográfico'] },
-        { tipo: 'input', nombre: 'referencia_visual', label: 'Referencia visual o inspiración', placeholder: 'Ej: estilo Zara, paleta tierra, fotografía editorial Vogue...' },
-      ],
-      prompt: `Sos Matías, Director de Fotografía y Producción Audiovisual de HM AI. Transformás ideas en planes de producción concretos y ejecutables, pensados para que cualquier equipo pueda llevarlos a la realidad.
+Respondé siempre en español. Sé concreto y directo.`
+      },
+      {
+        id: 'matias_director_produccion',
+        icon: '🎬',
+        nombre: 'Director de Producción',
+        desc: 'Plan de tomas, storyboard y dirección visual para tu producción de contenido.',
+        campos: [
+          { tipo: 'input', nombre: 'producto', label: 'Producto o marca', placeholder: 'Ej: nueva línea de skincare / colección de bolsos...' },
+          { tipo: 'select', nombre: 'objetivo', label: 'Objetivo de la producción', opciones: ['Reel para Instagram', 'TikTok viral', 'Ad para Meta Ads', 'Fotos para e-commerce', 'Campaña de lanzamiento', 'Contenido evergreen'] },
+          { tipo: 'select', nombre: 'duracion', label: 'Duración estimada (si es video)', opciones: ['15 segundos', '30 segundos', '60 segundos', '2-3 minutos', 'Solo fotos (sin video)'] },
+          { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Editorial premium', 'Lifestyle natural', 'Minimalista y limpio', 'Dinámico y rápido', 'Cinematográfico'] },
+          { tipo: 'input', nombre: 'referencia_visual', label: 'Referencia visual o inspiración', placeholder: 'Ej: estilo Zara, paleta tierra, fotografía editorial Vogue...' },
+        ],
+        prompt: `Sos Matías, Director de Fotografía y Producción Audiovisual de HM AI. Transformás ideas en planes de producción concretos y ejecutables.
 
 Perfil de Marca: {{perfil_marca}}
 Producto: {{producto}} | Objetivo: {{objetivo}} | Duración: {{duracion}} | Estilo: {{estilo}} | Referencia: {{referencia_visual}}
@@ -3122,7 +2974,7 @@ OUTPUT:
 **CONCEPTO VISUAL** — La idea central, estética dominante y por qué va a funcionar para este producto y objetivo.
 **DIRECCIÓN DE ARTE** — Paleta de colores, iluminación, materiales y texturas, props sugeridos, sensación general.
 **STORYBOARD:**
-  Para cada escena/toma: Número de toma / Descripción visual detallada / Tipo de plano / Movimiento / Duración / Elemento clave.
+  Para cada escena/toma: Número / Descripción visual detallada / Tipo de plano / Movimiento / Duración / Elemento clave.
 **PLAN DE PRODUCCIÓN:**
   Equipamiento necesario (cámara, luces, fondos, accesorios).
   Locación o set recomendado.
@@ -3134,8 +2986,8 @@ OUTPUT:
 **CHECKLIST PRE-PRODUCCIÓN** — Lista completa para no llegar al set sin algo importante.
 
 Como director de fotografía con experiencia en marcas de moda, cosmética y lifestyle.`
-    },
-  ]
-},
+      },
+    ]
+  },
 
-}; // ← cierre de window.ESPECIALISTAS
+}; // fin window.ESPECIALISTAS
