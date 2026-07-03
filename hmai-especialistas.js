@@ -2495,203 +2495,277 @@ Proceso profesional, escalable, sin depender del talento de una sola persona.`
     ]
   },
 
-  // ============================================================
-// VALERIA — DISEÑO VISUAL IA (ACTUALIZADO)
+ // ============================================================
+// VALERIA — DISEÑO VISUAL IA (v3 — banners completos con texto)
 // ============================================================
 valeria: {
   nombre: 'Valeria',
   rol: 'Diseño Visual IA',
   avatar: 'https://cdn.shopify.com/s/files/1/0800/6955/8502/files/Valeria.png?v=1781476124',
   color: 'linear-gradient(135deg,#be185d,#9333ea)',
-  desc: 'Diseñadora IA. Fondos y bases visuales profesionales para banners, flyers, ads y branding. Vos agregás el texto encima.',
+  desc: 'Diseñadora IA. Banners, flyers, portadas y ads completos y listos para publicar.',
   esVisual: true,
   tutorial: {
     titulo: '¿Cómo usar a Valeria?',
     pasos: [
-      { icon: '🖼️', titulo: 'Subí tu imagen de referencia', desc: 'Una foto de tu producto, un logo, o una imagen que quieras usar como base visual.' },
-      { icon: '🎨', titulo: 'Completá los campos', desc: 'Completá el estilo, objetivo y cualquier indicación extra. Valeria genera el fondo y la composición visual.' },
-      { icon: '✍️', titulo: 'Agregás el texto vos', desc: 'Valeria NO genera texto en la imagen. La base visual que obtenés está lista para que le agregues tu copy en Canva, Photoshop o cualquier app de diseño.' },
+      { icon: '🎨', titulo: 'Completá los campos de texto', desc: 'Escribí el título, subtítulo y CTA que querés en la pieza. Valeria los incorpora directamente en el diseño — no necesitás editar después.' },
+      { icon: '📌', titulo: 'La marca se aplica automáticamente', desc: 'Valeria toma los colores, tipografía y estilo visual de tu perfil de marca. Si querés otros colores, elegí "Personalizados" y cargá los HEX.' },
+      { icon: '🖼️', titulo: 'La imagen es opcional', desc: 'Podés subir tu logo, producto, foto de referencia o persona. Si no subís nada, Valeria diseña igual usando composición visual pura.' },
     ]
   },
   herramientas: [
     {
       id: 'valeria_banner',
       icon: '🖼️',
-      nombre: 'Generadora de Fondos para Banner',
-      desc: 'Fondo visual profesional para tu banner. Agregás el texto encima en Canva.',
+      nombre: 'Generadora de Banners',
+      desc: 'Banner publicitario completo con texto, diseño y colores de tu marca. Listo para publicar.',
       campos: [
-        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del banner', opciones: ['Venta / Promoción', 'Lanzamiento de producto', 'Branding / Posicionamiento', 'Evento', 'Captación de leads'] },
-        { tipo: 'select', nombre: 'tamano', label: 'Formato', opciones: ['Feed Instagram cuadrado (1:1)', 'Historia vertical (9:16)', 'Banner horizontal (16:9)', 'Feed vertical (4:5)'] },
-        { tipo: 'select', nombre: 'estilo_fondo', label: 'Estilo visual del fondo', opciones: ['Minimalista y limpio', 'Colorido y vibrante', 'Elegante y oscuro', 'Natural con texturas', 'Geométrico moderno', 'Degradado suave'] },
-        { tipo: 'input', nombre: 'elemento_visual', label: 'Elemento visual central (opcional)', placeholder: 'Ej: flores secas, café humeante, textura de mármol...' },
-        { tipo: 'input', nombre: 'indicaciones_extra', label: 'Indicaciones adicionales (opcional)', placeholder: 'Ej: que se vea premium, espacio en blanco arriba para título...' },
+        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del banner', opciones: ['Venta', 'Promoción', 'Lanzamiento de producto', 'Branding', 'Evento', 'Captación de leads'] },
+        { tipo: 'select', nombre: 'tamano', label: 'Tamaño / Formato', opciones: ['Feed Instagram (1:1)', 'Historia vertical (9:16)', 'Facebook cover (16:9)', 'Web / Landing (16:9)', 'Display / Banner horizontal', 'Personalizado'] },
+        { tipo: 'input', nombre: 'titulo', label: 'Texto principal', placeholder: 'Ej: 50% OFF esta semana' },
+        { tipo: 'input', nombre: 'subtitulo', label: 'Texto secundario (opcional)', placeholder: 'Ej: Solo hasta el domingo' },
+        { tipo: 'input', nombre: 'cta', label: 'CTA / llamado a la acción (opcional)', placeholder: 'Ej: Consultá ahora · Comprá aquí · Escribinos' },
+        { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Blanco y negro', 'Personalizados (especificá abajo)'] },
+        { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (opcional — si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
       ],
       esImagen: true,
-      prompt_imagen: `Create a BACKGROUND-ONLY professional advertising visual for {{tamano}} format. This is a BACKGROUND BASE — absolutely NO text, NO typography, NO words, NO letters of any kind anywhere in the image.
+      prompt_imagen: `You are Valeria, Senior Graphic Designer at HM AI. Generate ONE complete, final, professional advertising banner ready to publish. No mockups. No explanations. Only the finished design.
 
-Visual objective: {{objetivo}}
-Brand colors: {{colores_marca}}
-Visual style: {{estilo_fondo}}
-Central visual element: {{elemento_visual}}
-Extra indications: {{indicaciones_extra}}
-Brand overall aesthetic: {{estilo_visual}}
+FORMAT: {{tamano}}
+OBJECTIVE: {{objetivo}}
 
-STRICT RULES:
-- ZERO text, letters, words or typography in the image — this is NON-NEGOTIABLE
-- Leave intentional negative space / breathing room for text overlay (especially top third or bottom third)
-- Professional advertising quality, print-ready
-- Rich colors and contrast but not overwhelming — the design must support text being readable on top
-- Photorealistic or high-end graphic background depending on style
-- Dimensions and crop must feel intentional for the selected format
-- The visual must feel premium and publishable on its own, even without text`
+BRAND IDENTITY (apply strictly):
+- Brand name: {{nombre_marca}}
+- Visual style: {{estilo_visual}}
+- Typography: {{tipografia}} — if empty or "No sé", choose: elegant brand → classic serif (Playfair Display, Georgia); modern/tech brand → clean geometric sans-serif (Montserrat, DM Sans); casual/friendly brand → rounded humanist sans-serif (Nunito, Poppins)
+- Color config: {{colores_config}}
+- Brand colors (use when config is "Colores del perfil de marca"): {{colores_marca}}
+- Custom colors (use when config is "Personalizados"): {{colores_custom}}
+- If "Blanco y negro": design in pure grayscale only
+
+TEXT CONTENT (include exactly as provided — do not alter or translate):
+- Main text: {{titulo}}
+- Secondary text: {{subtitulo}}
+- CTA: {{cta}}
+
+DESIGN RULES:
+- Clear visual hierarchy: main text dominates, secondary text supports, CTA stands out with contrast
+- Text must be fully legible at 100% — no decorative overlaps that compromise readability
+- Adapt composition and text sizing to the selected format proportions
+- If an image was uploaded: use it as the main visual element, integrate it naturally into the composition
+- If no image: use strong typographic composition, geometric shapes, brand-color backgrounds or abstract elements
+- Design for conversion — the CTA must be visually distinct (button, box, contrasting color)
+- Professional advertising agency quality
+- One complete, final banner. Nothing else.`
     },
     {
       id: 'valeria_flyer',
       icon: '📄',
-      nombre: 'Generadora de Fondos para Flyer',
-      desc: 'Base visual de alto impacto para tu flyer. Vos completás el texto en Canva.',
+      nombre: 'Generadora de Flyers',
+      desc: 'Flyer publicitario completo listo para publicar o imprimir.',
       campos: [
-        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del flyer', opciones: ['Promoción / Descuento', 'Evento', 'Lanzamiento', 'Captación de clientes', 'Branding'] },
-        { tipo: 'select', nombre: 'formato', label: 'Formato', opciones: ['Instagram Feed cuadrado', 'Historia vertical (9:16)', 'Impresión A4 vertical', 'WhatsApp / General'] },
-        { tipo: 'select', nombre: 'estilo_fondo', label: 'Estilo visual', opciones: ['Impactante y llamativo', 'Minimalista y elegante', 'Oscuro y premium', 'Colorido y festivo', 'Natural y orgánico'] },
-        { tipo: 'select', nombre: 'paleta', label: 'Paleta de color', opciones: ['Usar colores de mi marca', 'Neutros (blanco, negro, gris)', 'Cálidos (naranja, rojo, amarillo)', 'Fríos (azul, verde, violeta)', 'Dorado / premium'] },
-        { tipo: 'input', nombre: 'elemento_visual', label: 'Elemento visual central (opcional)', placeholder: 'Ej: producto, figura geométrica, textura, ambiente...' },
-        { tipo: 'input', nombre: 'espacio_texto', label: '¿Dónde querés espacio para el texto?', placeholder: 'Ej: arriba, abajo, en el centro, en la mitad izquierda...' },
+        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del flyer', opciones: ['Promoción / Descuento', 'Evento', 'Lanzamiento', 'Captación de clientes', 'Branding / Institucional'] },
+        { tipo: 'select', nombre: 'formato', label: 'Formato', opciones: ['Instagram Feed cuadrado (1:1)', 'Historia vertical (9:16)', 'Impresión A4 vertical', 'WhatsApp / Mensaje directo'] },
+        { tipo: 'input', nombre: 'titulo', label: 'Título principal', placeholder: 'Ej: Gran liquidación de temporada' },
+        { tipo: 'input', nombre: 'texto_secundario', label: 'Texto secundario (opcional)', placeholder: 'Ej: Descuentos de hasta 60% en toda la tienda' },
+        { tipo: 'input', nombre: 'cta', label: 'CTA (opcional)', placeholder: 'Ej: Escribinos al 11-1234-5678 · Ver más en @marca' },
+        { tipo: 'input', nombre: 'info_extra', label: 'Info adicional (opcional)', placeholder: 'Ej: Válido hasta el 31/12 · Solo para socios · Código: PROMO30' },
+        { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Blanco y negro', 'Personalizados (especificá abajo)'] },
+        { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
       ],
       esImagen: true,
-      prompt_imagen: `Create a BACKGROUND-ONLY professional flyer base for {{formato}} format. NO text, NO words, NO letters anywhere — pure visual composition only.
+      prompt_imagen: `You are Valeria, Senior Advertising Designer at HM AI. Generate ONE complete professional advertising flyer, ready to publish or print. No descriptions. No explanations. Only the finished flyer.
 
-Objective: {{objetivo}}
-Visual style: {{estilo_fondo}}
-Color palette: {{paleta}} — brand colors reference: {{colores_marca}}
-Central visual element: {{elemento_visual}}
-Text placement zone: leave clear intentional empty space at {{espacio_texto}} for text overlay
-Brand aesthetic: {{estilo_visual}}
+FORMAT: {{formato}}
+OBJECTIVE: {{objetivo}}
 
-CRITICAL RULES:
-- ABSOLUTELY NO text, typography, letters or words of any kind
-- The empty space for text must be clean and high-contrast-friendly (light area for dark text or dark area for light text)
-- Advertising-grade quality — must look like it came from a professional design agency
-- Colors must feel intentional and brand-aligned
-- The composition must be visually balanced even without text`
+BRAND IDENTITY:
+- Brand name: {{nombre_marca}}
+- Visual style: {{estilo_visual}}
+- Typography: {{tipografia}} — fallback if empty: casual/festive → Poppins or Nunito; professional → Montserrat; elegant → Playfair Display
+- Color config: {{colores_config}}
+- Brand colors: {{colores_marca}}
+- Custom colors: {{colores_custom}}
+- If "Blanco y negro": strict grayscale only
+
+TEXT TO INCLUDE:
+- Title: {{titulo}}
+- Secondary text: {{texto_secundario}}
+- CTA: {{cta}}
+- Additional info: {{info_extra}}
+
+DESIGN RULES:
+- Capture attention in under 3 seconds — strong visual entry point
+- Clear visual hierarchy: title → supporting text → additional info → CTA
+- CTA must stand out visually (contrasting button or box)
+- Adapt composition fully to the selected format (vertical/square proportions)
+- If image uploaded: use as main visual, properly integrated
+- If no image: strong typographic and graphic composition using brand identity
+- Avoid visual saturation — clean, purposeful design
+- Professional publishing quality — ready to post on Instagram or send via WhatsApp`
     },
     {
       id: 'valeria_portada',
       icon: '🎨',
-      nombre: 'Generadora de Fondos para Portadas',
-      desc: 'Portada visual para reels, ebooks o cursos. Sin texto generado — agregás el título vos.',
+      nombre: 'Generadora de Portadas',
+      desc: 'Portadas impactantes para reels, cursos, ebooks o YouTube con texto incluido.',
       campos: [
-        { tipo: 'select', nombre: 'tipo', label: 'Tipo de portada', opciones: ['Reel / TikTok', 'Ebook / Guía', 'Curso online', 'YouTube thumbnail', 'Presentación / Slide'] },
-        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista y limpio', 'Moderno y dinámico', 'Premium y oscuro', 'Brillante e impactante', 'Editorial suave'] },
-        { tipo: 'select', nombre: 'composicion', label: 'Composición', opciones: ['Fondo abstracto / degradado', 'Con elemento visual central', 'Textura o patrón', 'Fotográfico difuminado', 'Geométrico moderno'] },
-        { tipo: 'input', nombre: 'elemento_visual', label: 'Elemento o concepto visual', placeholder: 'Ej: laptop, gráficos, persona difuminada, partículas...' },
-        { tipo: 'input', nombre: 'indicaciones_extra', label: 'Indicaciones adicionales', placeholder: 'Ej: espacio en el centro para el título, tonos oscuros con detalles dorados...' },
+        { tipo: 'select', nombre: 'tipo', label: 'Tipo de portada', opciones: ['Reel / TikTok (vertical 9:16)', 'Ebook / Guía (vertical A4)', 'Curso online (16:9 horizontal)', 'YouTube thumbnail (16:9)', 'Presentación / Slide (16:9)'] },
+        { tipo: 'input', nombre: 'titulo', label: 'Título principal', placeholder: 'Ej: Cómo conseguir 1000 clientes en 90 días' },
+        { tipo: 'input', nombre: 'subtitulo', label: 'Subtítulo (opcional)', placeholder: 'Ej: La guía definitiva para agencias' },
+        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista y limpio', 'Moderno y dinámico', 'Premium / oscuro', 'Editorial suave', 'Impactante / gran contraste'] },
+        { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Blanco y negro', 'Personalizados (especificá abajo)'] },
+        { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
       ],
       esImagen: true,
-      prompt_imagen: `Create a BACKGROUND-ONLY professional {{tipo}} cover visual. NO text, NO title, NO words — pure visual background only.
+      prompt_imagen: `You are Valeria, Senior Editorial Designer at HM AI. Generate ONE complete professional cover with text, ready to use. No mockups. No explanations. Only the finished cover.
 
-Visual style: {{estilo}}
-Composition type: {{composicion}}
-Visual element/concept: {{elemento_visual}}
-Brand colors: {{colores_marca}}
-Brand aesthetic: {{estilo_visual}}
-Extra: {{indicaciones_extra}}
+TYPE: {{tipo}}
+VISUAL STYLE: {{estilo}}
 
-RULES:
-- Zero text or typography — the user will add the title themselves
-- Leave prominent space (center or upper area) that is visually clean for text overlay
-- High visual impact — must compete for attention in a social media feed
-- Professional quality matching premium educational brands
-- The background must make a bold title readable when overlaid`
+BRAND IDENTITY:
+- Brand name: {{nombre_marca}}
+- Brand aesthetic: {{estilo_visual}}
+- Typography: {{tipografia}} — fallback: editorial/elegant → Playfair Display; modern/dynamic → Montserrat Bold; minimal → DM Sans
+- Color config: {{colores_config}}
+- Brand colors: {{colores_marca}}
+- Custom colors: {{colores_custom}}
+
+TEXT TO INCLUDE:
+- Main title: {{titulo}}
+- Subtitle: {{subtitulo}}
+
+DESIGN RULES:
+- Title must be the absolute visual focus — large, bold, immediately readable
+- Composition must feel intentional and high-impact, even at thumbnail size
+- If image uploaded: integrate as background or main visual element; overlay text with sufficient contrast
+- If no image: create strong typographic + graphic composition
+- Match the cover proportions exactly to the selected type
+- Maximum CTR-optimized design — must stand out in a feed or video grid
+- Professional quality matching top educational or media brands`
     },
     {
       id: 'valeria_ads',
       icon: '📢',
-      nombre: 'Generadora de Fondos para Ads',
-      desc: 'Base visual de performance para Meta Ads o Google Display. Sin texto — vos lo agregás.',
+      nombre: 'Generadora de Creatividades para Ads',
+      desc: 'Creatividades completas para Meta Ads con texto, oferta y CTA incluidos.',
       campos: [
-        { tipo: 'input', nombre: 'producto', label: 'Producto o servicio', placeholder: 'Ej: curso de marketing digital, crema hidratante...' },
-        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo del anuncio', opciones: ['Ventas directas', 'Captación de leads', 'Branding / Awareness', 'Retargeting', 'Lanzamiento'] },
+        { tipo: 'input', nombre: 'producto', label: 'Producto o servicio que promocionás', placeholder: 'Ej: Mentoría de marketing digital / Curso de Instagram' },
+        { tipo: 'input', nombre: 'oferta', label: 'Oferta principal', placeholder: 'Ej: Primer mes gratis · 50% OFF · 2x1 esta semana' },
+        { tipo: 'input', nombre: 'beneficio', label: 'Beneficio o promesa principal', placeholder: 'Ej: Conseguí tus primeros 10 clientes en 30 días' },
+        { tipo: 'input', nombre: 'cta', label: 'CTA', placeholder: 'Ej: Empezá hoy · Consultá gratis · Ver más' },
         { tipo: 'select', nombre: 'formato', label: 'Formato del ad', opciones: ['Feed cuadrado (1:1)', 'Historia vertical (9:16)', 'Banner horizontal (16:9)', 'Feed vertical (4:5)'] },
-        { tipo: 'select', nombre: 'sensacion', label: 'Sensación que debe transmitir', opciones: ['Urgencia y deseo', 'Confianza y seriedad', 'Exclusividad y lujo', 'Alegría y energía', 'Calma y bienestar'] },
-        { tipo: 'input', nombre: 'elemento_visual', label: 'Elemento visual principal', placeholder: 'Ej: el producto en primer plano, persona feliz, ambiente de oficina...' },
+        { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Blanco y negro', 'Personalizados (especificá abajo)'] },
+        { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
       ],
       esImagen: true,
-      prompt_imagen: `Create a BACKGROUND-ONLY high-converting ad visual for {{formato}} format. NO text, NO copy, NO words — background composition only.
+      prompt_imagen: `You are Valeria, Performance Creative Designer at HM AI. Generate ONE complete advertising creative ready for Meta Ads campaigns. No explanations. Only the finished ad creative.
 
-Product/service context: {{producto}}
-Ad goal: {{objetivo}}
-Emotional feeling: {{sensacion}}
-Main visual element: {{elemento_visual}}
-Brand colors: {{colores_marca}}
-Brand aesthetic: {{estilo_visual}}
+FORMAT: {{formato}}
 
-PERFORMANCE RULES:
-- ZERO text of any kind — copywriter will add text separately
-- Scroll-stopping visual impact in the first 0.3 seconds
-- Clear focal point that draws the eye naturally
-- Ample clean space for text overlay (CTA area at bottom or top)
-- Colors calibrated for high contrast and readability of overlaid white or dark text
-- Professional advertising quality matching top-tier Meta Ads creatives`
+BRAND IDENTITY:
+- Brand name: {{nombre_marca}}
+- Visual style: {{estilo_visual}}
+- Typography: {{tipografia}} — fallback: performance ads → bold geometric sans-serif (Montserrat Bold, Inter); elegant brand → Cormorant Garamond or Playfair Display
+- Color config: {{colores_config}}
+- Brand colors: {{colores_marca}}
+- Custom colors: {{colores_custom}}
+
+AD CONTENT:
+- Product/service: {{producto}}
+- Main offer: {{oferta}}
+- Key benefit/promise: {{beneficio}}
+- CTA: {{cta}}
+
+PERFORMANCE DESIGN RULES:
+- Offer must be the dominant visual element — large, impossible to miss
+- Benefit text supports and justifies the offer
+- CTA must look like a button or clear action element with high contrast
+- Stop-the-scroll visual — must compete in a dense social media feed
+- If image uploaded: use as primary visual, integrate offer and CTA as overlay with contrast
+- If no image: strong typographic composition focused on the offer
+- Maximum clarity — user must understand the offer in 1 second
+- Calibrated for Meta Ads best practices: prominent brand, clear value, strong CTA
+- Professional ad agency quality`
     },
     {
       id: 'valeria_branding',
       icon: '✨',
-      nombre: 'Generadora de Concepto Visual de Marca',
-      desc: 'Propuesta de identidad visual: paleta, estilo y mood de marca generado con IA.',
+      nombre: 'Generadora de Branding Visual',
+      desc: 'Propuesta visual de identidad de marca: paleta, tipografía y concepto estético.',
       campos: [
         { tipo: 'select', nombre: 'industria', label: 'Industria', opciones: ['Marketing / Agencia', 'Moda y ropa', 'Gastronomía', 'Salud y bienestar', 'Tecnología', 'Educación', 'Belleza y cosmética', 'Otro'] },
         { tipo: 'select', nombre: 'personalidad', label: 'Personalidad de la marca', opciones: ['Sofisticada y premium', 'Cercana y amigable', 'Seria y corporativa', 'Atrevida y disruptiva', 'Minimalista y limpia', 'Natural y orgánica', 'Innovadora y tech', 'Lujosa y exclusiva'] },
         { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista elegante', 'Moderno y dinámico', 'Editorial premium', 'Orgánico y natural', 'Futurista y tech', 'Vintage y artesanal', 'Colorido y alegre'] },
         { tipo: 'input', nombre: 'referencias', label: 'Marcas de referencia visual', placeholder: 'Ej: Zara, Glossier, Apple, Nike, Loewe...' },
-        { tipo: 'input', nombre: 'descripcion_negocio', label: '¿Qué hace esta marca?', placeholder: 'Ej: agencia de marketing para pequeños negocios...' },
+        { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Proponer nueva paleta', 'Personalizado (especificá abajo)'] },
+        { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizado")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
       ],
       esImagen: true,
-      prompt_imagen: `Create a professional brand visual identity mood board. NO text overlays, NO brand name, NO taglines — pure visual concept only.
+      prompt_imagen: `You are Valeria, Senior Brand Designer at HM AI. Generate ONE complete visual brand identity proposal. No text descriptions. No explanations. Only the visual result.
 
-Industry: {{industria}}
-Brand personality: {{personalidad}}
-Visual style: {{estilo}}
-References: {{referencias}}
-Business: {{descripcion_negocio}}
-Current brand colors (reference): {{colores_marca}}
+BRAND CONTEXT:
+- Brand name: {{nombre_marca}}
+- Industry: {{industria}}
+- Personality: {{personalidad}}
+- Visual style: {{estilo}}
+- References: {{referencias}}
+- Brand base aesthetic: {{estilo_visual}}
 
-DESIGN RULES:
-- Zero text or typography in the image
-- Show: color palette swatches, texture samples, photographic style, graphic elements, visual mood
-- Professional brand studio quality — should look like a mood board from a top design agency
-- Cohesive visual universe that tells the brand story without words
-- Include visual elements that could become brand assets: patterns, shapes, photography style references`
+TYPOGRAPHY:
+- Existing typography from brand profile: {{tipografia}}
+- If "No sé" or empty: select a typography pair that matches the personality and style chosen above. Show the chosen fonts as part of the proposal.
+
+COLOR:
+- Config: {{colores_config}}
+- Current brand colors (reference): {{colores_marca}}
+- Custom colors: {{colores_custom}}
+- If "Proponer nueva paleta": create a cohesive 4-5 color palette that matches the personality and style
+
+DELIVERABLE — show all of these in a single visual:
+- Color palette with hex swatches
+- Typography pairing (heading font + body font, shown as sample text)
+- Visual mood elements (textures, shapes, graphic elements representative of the identity)
+- A sample social media post mockup showing the identity in context
+- Consistent, professional brand studio quality — agency-grade branding proposal`
     },
     {
       id: 'valeria_moodboard',
       icon: '🌈',
       nombre: 'Generadora de Moodboards',
-      desc: 'Dirección visual para campañas o proyectos. Collage de referencias estéticas sin texto.',
+      desc: 'Moodboard profesional de dirección visual para campañas, marcas o proyectos.',
       campos: [
-        { tipo: 'input', nombre: 'proyecto', label: 'Proyecto o campaña', placeholder: 'Ej: colección verano 2025, relanzamiento de marca...' },
-        { tipo: 'select', nombre: 'objetivo', label: 'Para qué es', opciones: ['Identidad visual de marca', 'Campaña publicitaria', 'Contenido para redes', 'Shooting fotográfico', 'Rediseño de marca'] },
-        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista', 'Editorial', 'Luxury', 'Orgánico', 'Futurista', 'Colorido', 'Vintage', 'Urbano'] },
-        { tipo: 'select', nombre: 'emocion', label: 'Emoción principal', opciones: ['Exclusividad', 'Frescura', 'Energía', 'Calma', 'Lujo', 'Alegría', 'Nostalgia', 'Misterio'] },
-        { tipo: 'input', nombre: 'referencias', label: 'Referencias o elementos que querés ver', placeholder: 'Ej: colores tierra, flores secas, arquitectura japonesa...' },
+        { tipo: 'input', nombre: 'proyecto', label: 'Proyecto o campaña', placeholder: 'Ej: Colección verano 2025 / Relanzamiento de marca' },
+        { tipo: 'select', nombre: 'objetivo', label: 'Para qué lo necesitás', opciones: ['Identidad visual de marca', 'Campaña publicitaria', 'Shooting fotográfico', 'Contenido para redes', 'Rediseño de marca'] },
+        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Minimalista', 'Editorial', 'Luxury / Premium', 'Orgánico y natural', 'Futurista', 'Colorido y pop', 'Vintage', 'Urbano'] },
+        { tipo: 'select', nombre: 'emocion', label: 'Emoción principal', opciones: ['Exclusividad', 'Frescura y ligereza', 'Energía y dinamismo', 'Calma y bienestar', 'Lujo y poder', 'Alegría y diversión', 'Nostalgia', 'Misterio'] },
+        { tipo: 'input', nombre: 'referencias', label: 'Referencias o elementos que querés ver', placeholder: 'Ej: colores tierra, flores secas, arquitectura japonesa, fotografía editorial...' },
+        { tipo: 'select', nombre: 'colores_config', label: 'Configuración de colores', opciones: ['Colores del perfil de marca', 'Libre según el estilo elegido', 'Personalizados (especificá abajo)'] },
+        { tipo: 'input', nombre: 'colores_custom', label: 'Colores personalizados (si elegiste "Personalizados")', placeholder: 'Ej: #FF5733 #FFFFFF #222222' },
       ],
       esImagen: true,
-      prompt_imagen: `Create a professional creative mood board collage. NO text, NO labels, NO captions — pure visual references only.
+      prompt_imagen: `You are Valeria, Art Director and Visual Curator at HM AI. Generate ONE professional creative moodboard. No text descriptions. No labels. No explanations. Only the visual moodboard.
 
-Project: {{proyecto}}
-Purpose: {{objetivo}}
-Visual style: {{estilo}}
-Main emotion: {{emocion}}
-Brand colors reference: {{colores_marca}}
-Visual references requested: {{referencias}}
+PROJECT: {{proyecto}}
+PURPOSE: {{objetivo}}
+VISUAL STYLE: {{estilo}}
+MAIN EMOTION: {{emocion}}
+REFERENCES: {{referencias}}
 
-COMPOSITION RULES:
-- Zero text or typography anywhere in the image
-- Collage or grid of complementary visual references
-- Show: color palette inspiration, texture references, photographic style, lighting mood, material/surface references
-- Professional creative direction quality — agency-grade mood board
-- Colors should flow cohesively across the entire composition
-- Each visual element should reinforce the same emotional universe`
+BRAND:
+- Name: {{nombre_marca}}
+- Current colors (reference): {{colores_marca}}
+- Color config: {{colores_config}}
+- Custom colors: {{colores_custom}}
+- Brand aesthetic: {{estilo_visual}}
+
+MOODBOARD RULES:
+- Collage or grid of complementary visual references — NO text overlays, NO labels
+- Show: color palette chips, texture and material samples, photographic style references, lighting mood, graphic element style
+- Every visual element must reinforce the same emotional universe
+- Colors must flow cohesively across the entire composition
+- Professional creative direction quality — looks like a top design agency deliverable
+- One single image containing the complete moodboard`
     },
   ]
 },
