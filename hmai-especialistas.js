@@ -2998,6 +2998,110 @@ ENHANCEMENT RULES:
 
 QUALITY: e-commerce and advertising ready, no artificial or over-processed look`
     },
+  // ── NUEVA HERRAMIENTA: ANALIZADOR DE TUTORIALES ──────────────
+    {
+      id: 'matias_analizador_tutorial',
+      icon: '🔍',
+      nombre: 'Analizador de Tutoriales',
+      desc: 'Pegá el HTML de cualquier reel o tutorial y la IA te da el paso a paso para replicarlo con tu marca.',
+      campos: [
+        {
+          tipo: 'textarea',
+          nombre: 'html_tutorial',
+          label: '📋 Pegá el código HTML del tutorial aquí',
+          placeholder: 'Cómo obtenerlo:\n1. Abrí el reel en Instagram, TikTok o YouTube\n2. Click derecho → "Inspeccionar" (o F12)\n3. Seleccioná todo (Ctrl+A o Cmd+A) y copiá\n4. Pegá todo aquí\n\nNota: también podés pegar directamente la descripción o transcripción del video si la tenés.'
+        },
+        {
+          tipo: 'select',
+          nombre: 'tipo_contenido',
+          label: '¿Qué tipo de contenido es el tutorial?',
+          opciones: [
+            'Reel / TikTok con transiciones',
+            'Tutorial de fotografía de producto',
+            'Tutorial de video / edición',
+            'Tutorial de contenido lifestyle',
+            'Tutorial de moda / outfit',
+            'Tutorial de gastronomía / receta visual',
+            'Otro'
+          ]
+        },
+        {
+          tipo: 'select',
+          nombre: 'nivel_detalle',
+          label: '¿Qué tan detallado necesitás el paso a paso?',
+          opciones: [
+            'Resumen ejecutivo (10 pasos clave)',
+            'Detallado (cada movimiento y transición)',
+            'Ultra detallado (incluye tiempos, ángulos y configuración de cámara)'
+          ]
+        },
+        {
+          tipo: 'input',
+          nombre: 'contexto_extra',
+          label: '¿Qué producto o escena querés aplicar? (opcional)',
+          placeholder: 'Ej: anillo de plata sobre mesa de mármol / remera oversize en exterior'
+        },
+      ],
+      prompt: `Sos Matías, Director de Fotografía y Producción de HM AI. Tu trabajo es analizar el contenido de un tutorial de redes sociales y convertirlo en un plan de producción paso a paso, adaptado a la marca del usuario.
+
+PERFIL DE MARCA:
+{{perfil_marca}}
+
+TIPO DE CONTENIDO: {{tipo_contenido}}
+NIVEL DE DETALLE: {{nivel_detalle}}
+PRODUCTO / ESCENA A APLICAR: {{contexto_extra}}
+
+CONTENIDO DEL TUTORIAL (HTML o descripción):
+---
+{{html_tutorial}}
+---
+
+TU TRABAJO:
+1. Extraé del HTML/descripción toda la información útil: qué hace el creador, en qué orden, qué transiciones usa, qué música sugiere, qué equipamiento se ve, qué efectos de edición aplica.
+2. Ignorá todo el código HTML, publicidades, menús, y ruido visual. Solo extraé el contenido del video/tutorial.
+3. Si el HTML no contiene información clara del video, avisalo y trabajá con lo que haya.
+4. Adaptá cada paso a la marca del usuario y al producto/escena que indicó.
+
+OUTPUT — seguí EXACTAMENTE esta estructura:
+
+**🎬 QUÉ HACE ESTE TUTORIAL**
+Descripción en 2-3 líneas de qué se hace en el video y qué resultado logra.
+
+**🎯 OBJETIVO DEL CONTENIDO**
+Para qué sirve este tipo de contenido (engagement, ventas, viralización, autoridad).
+
+**📋 PASO A PASO PARA REPLICARLO**
+Numerado, claro, ejecutable. Cada paso debe decir:
+- Qué hacer exactamente
+- Cómo hacerlo con el producto/marca del usuario
+- Duración aproximada del clip si aplica
+
+**📸 CONFIGURACIÓN DE CÁMARA RECOMENDADA**
+Ángulo, distancia, orientación (vertical/horizontal), tipo de plano.
+
+**💡 ILUMINACIÓN**
+Qué tipo de luz usar, dónde ubicarla, qué evitar.
+
+**✂️ EDICIÓN Y TRANSICIONES**
+Listado de cada transición o efecto de edición que se ve, en orden, con cómo ejecutarlo.
+
+**🎵 MÚSICA / AUDIO**
+Tipo de música recomendada, ritmo, cómo acompañar los cortes.
+
+**🏷️ ADAPTACIÓN A TU MARCA**
+Cómo personalizar específicamente para {{nombre_marca}}: colores, estilo, producto, escenario recomendado.
+
+**⚠️ ERRORES COMUNES AL REPLICAR ESTE TUTORIAL**
+Los 3 errores más frecuentes y cómo evitarlos.
+
+**✅ CHECKLIST DE PRODUCCIÓN**
+Lista de verificación para tener todo listo antes de grabar.
+
+Respondé siempre en español. Sé concreto y directo — este paso a paso lo va a leer alguien durante una producción de fotos/video, necesita entenderse de un vistazo.`
+    },
+
+
+    
     {
       id: 'matias_director_produccion',
       icon: '🎬',
