@@ -3101,5 +3101,5 @@ Lista de verificación para tener todo listo antes de grabar.
 
 Respondé siempre en español. Sé concreto y directo — este paso a paso lo va a leer alguien durante una producción de fotos/video, necesita entenderse de un vistazo.`
     },
-
+    };
  // fin
