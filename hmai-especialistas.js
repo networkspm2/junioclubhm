@@ -2998,7 +2998,7 @@ ENHANCEMENT RULES:
 
 QUALITY: e-commerce and advertising ready, no artificial or over-processed look`
     },
-  // ── NUEVA HERRAMIENTA: ANALIZADOR DE TUTORIALES ──────────────
+ // ── NUEVA HERRAMIENTA: ANALIZADOR DE TUTORIALES ──────────────
     {
       id: 'matias_analizador_tutorial',
       icon: '🔍',
@@ -3009,7 +3009,9 @@ QUALITY: e-commerce and advertising ready, no artificial or over-processed look`
           tipo: 'textarea',
           nombre: 'html_tutorial',
           label: '📋 Pegá el código HTML del tutorial aquí',
-          placeholder: 'Cómo obtenerlo:\n1. Abrí el reel en Instagram, TikTok o YouTube\n2. Click derecho → "Inspeccionar" (o F12)\n3. Seleccioná todo (Ctrl+A o Cmd+A) y copiá\n4. Pegá todo aquí\n\nNota: también podés pegar directamente la descripción o transcripción del video si la tenés.'
+          placeholder: 'Pegá todo el código aquí...',
+          rows: 6,
+          ayuda: '<strong>¿Cómo obtenerlo?</strong>\n1. Abrí el reel en Instagram, TikTok o YouTube\n2. Click derecho en la página → <strong>Inspeccionar</strong> (o F12)\n3. Seleccioná todo con Ctrl+A (o Cmd+A en Mac) y copiá\n4. Pegá aquí\n\n💡 <strong>También funciona</strong> si pegás la descripción o transcripción del video directamente.'
         },
         {
           tipo: 'select',
@@ -3099,44 +3101,5 @@ Lista de verificación para tener todo listo antes de grabar.
 
 Respondé siempre en español. Sé concreto y directo — este paso a paso lo va a leer alguien durante una producción de fotos/video, necesita entenderse de un vistazo.`
     },
-
-
-    
-    {
-      id: 'matias_director_produccion',
-      icon: '🎬',
-      nombre: 'Director de Producción',
-      desc: 'Plan de tomas, storyboard y dirección visual para tu producción de contenido.',
-      campos: [
-        { tipo: 'input', nombre: 'producto', label: 'Producto o marca', placeholder: 'Ej: nueva línea de skincare / colección de bolsos...' },
-        { tipo: 'select', nombre: 'objetivo', label: 'Objetivo de la producción', opciones: ['Reel para Instagram', 'TikTok viral', 'Ad para Meta Ads', 'Fotos para e-commerce', 'Campaña de lanzamiento', 'Contenido evergreen'] },
-        { tipo: 'select', nombre: 'duracion', label: 'Duración estimada (si es video)', opciones: ['15 segundos', '30 segundos', '60 segundos', '2-3 minutos', 'Solo fotos (sin video)'] },
-        { tipo: 'select', nombre: 'estilo', label: 'Estilo visual', opciones: ['Editorial premium', 'Lifestyle natural', 'Minimalista y limpio', 'Dinámico y rápido', 'Cinematográfico'] },
-        { tipo: 'input', nombre: 'referencia_visual', label: 'Referencia visual o inspiración', placeholder: 'Ej: estilo Zara, paleta tierra, fotografía editorial Vogue...' },
-      ],
-      prompt: `Sos Matías, Director de Fotografía y Producción Audiovisual de HM AI. Transformás ideas en planes de producción concretos y ejecutables, pensados para que cualquier equipo pueda llevarlos a la realidad.
-
-Perfil de Marca: {{perfil_marca}}
-Producto: {{producto}} | Objetivo: {{objetivo}} | Duración: {{duracion}} | Estilo: {{estilo}} | Referencia: {{referencia_visual}}
-
-OUTPUT:
-**CONCEPTO VISUAL** — La idea central, estética dominante y por qué va a funcionar para este producto y objetivo.
-**DIRECCIÓN DE ARTE** — Paleta de colores, iluminación, materiales y texturas, props sugeridos, sensación general.
-**STORYBOARD:**
-  Para cada escena/toma: Número de toma / Descripción visual / Tipo de plano / Movimiento / Duración / Elemento clave.
-**PLAN DE PRODUCCIÓN:**
-  Equipamiento necesario (cámara, luces, fondos, accesorios).
-  Locación o set recomendado.
-  Personas necesarias (modelos, manos, crew).
-  Props y elementos de escena.
-**ORDEN DE GRABACIÓN** — Secuencia eficiente para optimizar el tiempo en producción.
-**EDICIÓN RECOMENDADA** — Ritmo de cortes, música, color grading, efectos, transiciones.
-**ERRORES A EVITAR** — Los más frecuentes en producciones de este tipo de producto.
-**CHECKLIST PRE-PRODUCCIÓN** — Lista completa para no llegar al set sin algo importante.
-
-Como director de fotografía con experiencia en marcas de moda, cosmética y lifestyle.`
-    },
-  ]
-},
 
 }; // fin
