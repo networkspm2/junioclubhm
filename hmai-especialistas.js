@@ -645,7 +645,7 @@ Como directora comercial contratada para aumentar ventas. Sin rodeos.`
     desc: 'Guionista de reels, carruseles y captions. Crea contenido que vende y genera comunidad.',
     herramientas: [
       {
-        id: 'daniela_reel',
+        id: 'daniela_reel', oculta: true,
         icon: '🎬',
         nombre: 'Guionista de Reels',
         desc: 'Guiones virales completos con tomas, edición y CTAs.',
@@ -739,7 +739,7 @@ OUTPUT:
 Orientada a resultados de negocio, no a vanity metrics.`
       },
       {
-        id: 'daniela_carrusel',
+        id: 'daniela_carrusel', oculta: true,
         icon: '📱',
         nombre: 'Generadora de Carruseles',
         desc: 'Carruseles virales completos listos para diseñar y publicar.',
@@ -772,7 +772,7 @@ Para cada slide:
 Práctico, creativo y listo para diseñar.`
       },
       {
-        id: 'daniela_caption',
+        id: 'daniela_caption', oculta: true,
         icon: '✍️',
         nombre: 'Generadora de Captions',
         desc: 'Captions estratégicos con hook, desarrollo y CTA para cualquier publicación.',
@@ -1835,7 +1835,7 @@ OUTPUT:
     desc: 'Analista y planificadora. Reportes, análisis de competencia, calendarios y planes de lanzamiento.',
     herramientas: [
       {
-        id: 'victoria_planificadora_contenido',
+        id: 'victoria_planificadora_contenido', oculta: true,
         icon: '📅',
         nombre: 'Planificadora de Contenido',
         desc: 'Calendario estratégico completo alineado con tus objetivos de negocio.',
@@ -1952,7 +1952,7 @@ OUTPUT:
 En lenguaje claro. Conectando datos con decisiones.`
       },
       {
-        id: 'victoria_analista_competencia',
+        id: 'victoria_analista_competencia', oculta: true,
         icon: '🔭',
         nombre: 'Analista de Competencia',
         desc: 'Análisis profundo de competidores para detectar oportunidades de diferenciación.',
@@ -2008,7 +2008,7 @@ OUTPUT:
 Inteligencia competitiva real. Sin copiar, diferenciando.`
       },
       {
-        id: 'victoria_tendencias',
+        id: 'victoria_tendencias', oculta: true,
         icon: '🌊',
         nombre: 'Analista de Tendencias',
         desc: 'Detectá tendencias relevantes y cómo aplicarlas a tu marca.',
@@ -2192,7 +2192,7 @@ OUTPUT:
 Como closer profesional. Humano, natural, efectivo.`
       },
       {
-        id: 'nico_scripts_wp',
+        id: 'nico_scripts_wp', oculta: true,
         icon: '📝',
         nombre: 'Scripts para WhatsApp Business',
         desc: 'Scripts completos listos para copiar y usar en WhatsApp Business.',
@@ -2333,7 +2333,7 @@ OUTPUT:
 Humano, consultivo, efectivo.`
       },
       {
-        id: 'nico_secuencias_comerciales',
+        id: 'nico_secuencias_comerciales', oculta: true,
         icon: '📧',
         nombre: 'Generador de Secuencias Comerciales',
         desc: 'Secuencias de seguimiento automático para nutrir y convertir leads.',
@@ -2359,7 +2359,7 @@ OUTPUT:
 Secuencias que parecen humanas, no automatizadas.`
       },
       {
-        id: 'nico_difusiones',
+        id: 'nico_difusiones', oculta: true,
         icon: '📢',
         nombre: 'Generador de Difusiones',
         desc: 'Mensajes masivos para WhatsApp o email que generan ventas.',
