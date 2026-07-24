@@ -13,6 +13,7 @@ window.ESPECIALISTAS = {
     herramientas: [
       {
         id: 'yvette_directora',
+        oculta: true,
         icon: '👑',
         nombre: 'Tu Directora de Marketing',
         desc: 'Analizá tu negocio y recibí un plan de acción personalizado.',
@@ -94,6 +95,7 @@ Responde como consultora externa contratada. Sin rodeos.`
       },
       {
         id: 'yvette_diagnostico_agencia',
+        oculta: true,
         icon: '🏢',
         nombre: 'Diagnóstico de Agencia',
         desc: 'Análisis profundo para agencias y freelancers de marketing.',
@@ -121,6 +123,7 @@ Como consultora senior de agencias. Objetiva, sin suavizar.`
       },
       {
         id: 'yvette_plan90',
+        oculta: true,
         icon: '📅',
         nombre: 'Plan de Crecimiento 90 Días',
         desc: 'Roadmap completo mes a mes con acciones semanales.',
@@ -267,6 +270,7 @@ Responde como si el usuario hubiera contratado a la CEO de una agencia premium.`
       },
       {
         id: 'yvette_plan_marketing',
+        oculta: true,
         icon: '📋',
         nombre: 'Constructora de Plan de Marketing',
         desc: 'Plan de marketing completo por período con cronograma y KPIs.',
@@ -460,6 +464,7 @@ Como mentora honesta. Sin endulzar los problemas.`
       },
       {
         id: 'keila_escalamiento',
+        oculta: true,
         icon: '🏋️',
         nombre: 'Planificadora de Escalamiento',
         desc: 'Detectá qué está frenando tu crecimiento y diseñá un roadmap para escalar.',
@@ -999,6 +1004,7 @@ Todos listos para usar. Sin genéricos.`
       },
       {
         id: 'micaela_estratega',
+        oculta: true,
         icon: '🗓️',
         nombre: 'Estratega de Contenido',
         desc: 'Calendario mensual + ideas virales + historias + encuestas.',
@@ -1088,6 +1094,7 @@ Todos listos para usar. Variados y naturales.`
       },
       {
         id: 'micaela_difusiones',
+        oculta: true,
         icon: '📲',
         nombre: 'Generadora de Difusiones',
         desc: 'Mensajes de difusión para WhatsApp, email o comunidades que generan acción.',
@@ -1448,6 +1455,7 @@ Como directora de arte internacional. Inspirador y ejecutable.`
       },
       {
         id: 'juliana_identidad_visual',
+        oculta: true,
         icon: '✨',
         nombre: 'Generadora de Identidad Visual',
         desc: 'Sistema visual completo, coherente y diferenciador para tu marca.',
@@ -1551,6 +1559,7 @@ Como auditor CRO senior. Sin suavizar.`
       },
       {
         id: 'daro_embudos',
+        oculta: true,
         icon: '🌀',
         nombre: 'Constructor de Embudos',
         desc: 'Sistema completo de captación, conversión y seguimiento de clientes.',
@@ -1763,6 +1772,7 @@ OUTPUT:
       },
       {
         id: 'daro_propuesta_comercial',
+        oculta: true,
         icon: '💼',
         nombre: 'Constructor de Propuestas Comerciales',
         desc: 'Propuesta de alto impacto para cerrar clientes con profesionalismo.',
